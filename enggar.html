@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enggar Ranu Hariawan | Database Engineer & SRE</title>
+    <meta name="description" content="Senior Database Engineer & SRE specializing in high availability, zero-downtime migrations, and infrastructure automation for global e-commerce scale.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#047857', // Deep Emerald
+                        'primary-dark': '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        /* Custom scrollbar for elegance */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; }
+        
+        /* Fade in animation */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+
+<body class="bg-[#FAFAFA] text-[#1A1A1A] dark:bg-[#0F172A] dark:text-[#F8FAFC] transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-[#FAFAFA]/80 dark:bg-[#0F172A]/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight">Enggar<span class="text-primary dark:text-primary-dark">.</span></a>
+            <div class="flex items-center space-x-6">
+                <a href="#about" class="hidden sm:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition">About</a>
+                <a href="#experience" class="hidden sm:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition">Experience</a>
+                <a href="#projects" class="hidden sm:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition">Projects</a>
+                <!-- Dark Mode Toggle -->
+                 <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                     <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                     <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                 </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-3xl text-center fade-in">
+            <p class="font-mono text-primary dark:text-primary-dark mb-4 tracking-wide">Hello, world! I'm</p>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">Enggar Ranu Hariawan</h1>
+            <h2 class="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-400 mb-8">
+                Senior Database Engineer & SRE
+            </h2>
+            <div class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed space-y-4">
+                <p>Bridging the gap between database integrity and infrastructure reliability.</p>
+                <p>I build highly available, automated, and cost-efficient data systems for global e-commerce scale.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#experience" class="px-8 py-3 bg-primary dark:bg-primary-dark text-white font-medium rounded-lg hover:opacity-90 transition shadow-lg shadow-primary/20 dark:shadow-primary-dark/20">View Experience</a>
+                <a href="mailto:enggar.ranu@email.com" class="px-8 py-3 border border-gray-300 dark:border-gray-700 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6">
+        <div class="max-w-3xl mx-auto fade-in">
+            <h2 class="text-3xl font-bold mb-8">About <span class="text-primary dark:text-primary-dark">Me</span></h2>
+            <div class="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p>My journey in tech started as a <span class="font-semibold text-gray-900 dark:text-white">Backend Engineer</span>, which gave me a deep understanding of how applications consume data. In late 2018, I pivoted to become a <span class="font-semibold text-gray-900 dark:text-white">Database Administrator</span>, focusing on performance, security, and reliability.</p>
+                <p>Currently, as a <span class="font-semibold text-gray-900 dark:text-white">Global E-Commerce SRE</span>, I leverage my DBA roots to manage massive-scale datastore migrations, automate infrastructure, and ensure zero-downtime during peak traffic.</p>
+                <p class="font-medium text-gray-900 dark:text-white">I don't just maintain databases; I engineer them to be resilient, observable, and fully automated.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-24 px-6 bg-gray-100/50 dark:bg-gray-800/30">
+        <div class="max-w-4xl mx-auto fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-center">Core <span class="text-primary dark:text-primary-dark">Competencies</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                    <h3 class="font-semibold text-xl mb-4">Databases</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">PostgreSQL</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">MySQL</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">ByteRDS/NDB</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Redis</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Elasticsearch</span>
+                    </div>
+                </div>
+                <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                    <h3 class="font-semibold text-xl mb-4">SRE & Data Ops</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Debezium</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Kafka</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Docker</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Ansible</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Prometheus</span>
+                    </div>
+                </div>
+                <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                    <h3 class="font-semibold text-xl mb-4">Core Skills</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Zero-Downtime Migration</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Database Tuning</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">High Availability</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Disaster Recovery</span>
+                    </div>
+                </div>
+                <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                    <h3 class="font-semibold text-xl mb-4">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">SQL</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Python</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Bash</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Go</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 px-6">
+        <div class="max-w-3xl mx-auto fade-in">
+            <h2 class="text-3xl font-bold mb-12">Professional <span class="text-primary dark:text-primary-dark">Experience</span></h2>
+            
+            <div class="space-y-12">
+                <!-- SRE Role -->
+                <div class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-primary dark:bg-primary-dark rounded-full"></div>
+                    <h3 class="text-xl font-bold">Global E-Commerce SRE APAC</h3>
+                    <p class="text-gray-500 dark:text-gray-400 font-medium mb-4">Bytedance &bull; 2024 &ndash; Present</p>
+                    <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+                        <li class="flex gap-3">
+                            <span class="text-primary dark:text-primary-dark mt-1">&#9656;</span>
+                            <span><strong class="text-gray-900 dark:text-white">Massive Datastore Migration:</strong> Led the end-to-end migration of Tokopedia’s core datastores to ByteCloud. Engineered a custom migration framework handling complex partition tables, achieving 99.9% data consistency.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary dark:text-primary-dark mt-1">&#9656;</span>
+                            <span><strong class="text-gray-900 dark:text-white">Zero-Downtime Automation:</strong> Built and standardized 4 data migration frameworks. Developed 10+ automation scripts (Debezium, Kafka, Docker) that reduced manual migration intervention by 80%.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary dark:text-primary-dark mt-1">&#9656;</span>
+                            <span><strong class="text-gray-900 dark:text-white">Peak Traffic Stability:</strong> Guaranteed datastore stability with <strong>0 P0 incidents</strong> during Tokopedia’s largest mega-sales (Ramadhan Big Sale, Double-Date) for over a year.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary dark:text-primary-dark mt-1">&#9656;</span>
+                            <span><strong class="text-gray-900 dark:text-white">Observability & Governance:</strong> Established Polaris Success Metrics and Firemaps. Standardized L0 Core Links monitoring, giving product teams full visibility into MTTD and Recall Rates.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- DBA Role -->
+                <div class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
+                    <h3 class="text-xl font-bold">Senior Database Administrator</h3>
+                    <p class="text-gray-500 dark:text-gray-400 font-medium mb-4">Tokopedia / GoTo &bull; 2018 &ndash; 2024</p>
+                    <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+                        <li class="flex gap-3">
+                            <span class="text-gray-400 dark:text-gray-600 mt-1">&#9656;</span>
+                            <span><strong class="text-gray-900 dark:text-white">Performance & Reliability:</strong> Managed performance, integrity, and security for enterprise database servers. Conducted routine health checks, root cause analysis, and proactive tuning.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-gray-400 dark:text-gray-600 mt-1">&#9656;</span>
+                            <span><strong class="text-gray-900 dark:text-white">High Availability Architecture:</strong> Designed and implemented robust replication methods, connection pooling (PgBouncer), and load balancers to ensure high availability.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-gray-400 dark:text-gray-600 mt-1">&#9656;</span>
+                            <span><strong class="text-gray-900 dark:text-white">Disaster Recovery & Security:</strong> Developed comprehensive backup/recovery plans (RPO/RTO) and managed access controls for PCI DSS recertification and audits.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6 bg-gray-100/50 dark:bg-gray-800/30">
+        <div class="max-w-4xl mx-auto fade-in">
+            <h2 class="text-3xl font-bold mb-12 text-center">Featured <span class="text-primary dark:text-primary-dark">Projects</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="p-8 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition">
+                    <h3 class="text-xl font-bold mb-2">Habound</h3>
+                    <p class="text-sm text-primary dark:text-primary-dark font-mono mb-4">Centralized Config Manager</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Built a centralized configuration management tool for hundreds of PostgreSQL databases and PgBouncer instances. Eliminated configuration drift and standardized deployments across the infrastructure.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">PostgreSQL</span>
+                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">PgBouncer</span>
+                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">Ansible</span>
+                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">Git</span>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="p-8 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition">
+                    <h3 class="text-xl font-bold mb-2">Cross-Cloud Migration Framework</h3>
+                    <p class="text-sm text-primary dark:text-primary-dark font-mono mb-4">Automated Zero-Downtime Pipeline</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Architected a fully automated migration framework from PostgreSQL (GCP) to MySQL (ByteCloud). Handled complex data type transformations and built automated rollback mechanisms with zero data loss.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">Debezium</span>
+                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">Kafka</span>
+                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">Docker</span>
+                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="py-16 px-6 text-center border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-2xl mx-auto fade-in">
+            <h2 class="text-3xl font-bold mb-4">Let's build resilient data systems.</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-8">I'm currently open to new opportunities in Database Engineering, Data Reliability, and SRE roles (Remote / APAC).</p>
+            <a href="mailto:enggar.ranu@email.com" class="inline-block px-8 py-3 bg-primary dark:bg-primary-dark text-white font-medium rounded-lg hover:opacity-90 transition shadow-lg shadow-primary/20 dark:shadow-primary-dark/20">Get in Touch</a>
+            
+            <div class="flex justify-center space-x-6 mt-10 text-gray-500 dark:text-gray-400">
+                 <a href="https://linkedin.com/in/enggarranu" target="_blank" rel="noopener noreferrer" class="hover:text-primary dark:hover:text-primary-dark transition">LinkedIn</a>
+                 <a href="https://github.com/enggarranu" target="_blank" rel="noopener noreferrer" class="hover:text-primary dark:hover:text-primary-dark transition">GitHub</a>
+                <a href="mailto:enggar.ranu@email.com" class="hover:text-primary dark:hover:text-primary-dark transition">Email</a>
+            </div>
+            <p class="mt-12 text-sm text-gray-400">&copy; 2026 Enggar Ranu Hariawan. Crafted with care.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Dark Mode Toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleLightIcon.classList.toggle('hidden');
+            themeToggleDarkIcon.classList.toggle('hidden');
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+
+        // Simple Scroll Reveal Animation
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.15 };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+</body>
+</html>
