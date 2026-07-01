@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enggar Ranu Hariawan | Database Engineer & SRE</title>
-    <meta name="description" content="Senior Database Engineer & SRE specializing in high availability, zero-downtime migrations, and infrastructure automation for global e-commerce scale.">
+    <title>Enggar | SRE | DBA</title>
+    <meta name="description" content="Site Reliability Engineer | Database Administrator. Focus: reliability + performance, observability, and safe migrations across MySQL and PostgreSQL." />
+    <link rel="canonical" href="https://enggarranu.github.io/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Enggar Ranu Hariawan | Site Reliability Engineer (ex-DBA)" />
+    <meta property="og:description" content="Reliability + performance, observability, and safe migrations across MySQL and PostgreSQL." />
+    <meta property="og:url" content="https://enggarranu.github.io/" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Enggar Ranu Hariawan | Site Reliability Engineer | Database Administrator" />
+    <meta name="twitter:description" content="Reliability + performance, observability, and safe migrations across MySQL and PostgreSQL." />
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -18,7 +27,7 @@
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
-                        primary: '#047857', // Deep Emerald
+                        primary: '#047857',
                         'primary-dark': '#10B981',
                     }
                 }
@@ -26,7 +35,6 @@
         }
     </script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -34,30 +42,61 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
-        /* Custom scrollbar for elegance */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         .dark ::-webkit-scrollbar-thumb { background: #475569; }
         
-        /* Fade in animation */
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Enggar Ranu Hariawan",
+            "url": "https://enggarranu.github.io/",
+            "jobTitle": "Site Reliability Engineer",
+            "knowsAbout": [
+                "Database Migration",
+                "Site Reliability Engineering",
+                "PostgreSQL",
+                "MySQL",
+                "Change Data Capture",
+                "Debezium",
+                "Kafka",
+                "Infrastructure Automation"
+            ],
+            "sameAs": [
+                "https://www.linkedin.com/in/enggarranu/",
+                "https://github.com/enggarranu"
+            ]
+        }
+    </script>
 </head>
 
 <body class="bg-[#FAFAFA] text-[#1A1A1A] dark:bg-[#0F172A] dark:text-[#F8FAFC] transition-colors duration-300">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full top-0 z-50 bg-[#FAFAFA]/80 dark:bg-[#0F172A]/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <a href="#content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-white focus:text-gray-900 focus:rounded-lg focus:shadow">
+        Skip to content
+    </a>
+
+    <nav aria-label="Primary" class="fixed w-full top-0 z-50 bg-[#FAFAFA]/80 dark:bg-[#0F172A]/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl tracking-tight">Hello, I'm <span class="font-bold">Enggar</span><span class="text-primary dark:text-primary-dark">.</span></a>
+            <a href="#top" class="text-xl tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">
+                Hello, I'm Enggar<span class="text-primary dark:text-primary-dark">.</span>
+            </a>
             <div class="flex items-center space-x-6">
-                <a href="#about" class="hidden sm:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition">About</a>
-                <a href="#experience" class="hidden sm:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition">Experience</a>
-                <a href="#projects" class="hidden sm:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition">Projects</a>
-                <!-- Dark Mode Toggle -->
-                 <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                <a href="#about" class="hidden md:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">About</a>
+                <a href="#project" class="hidden md:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">Project</a>
+                <a href="#case-studies" class="hidden md:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">Case Studies</a>
+                <a href="#experience" class="hidden md:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">Experience</a>
+                <a href="#certifications" class="hidden md:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">Certifications</a>
+                <a href="#skills" class="hidden md:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">Skills</a>
+                <a href="#writing" class="hidden md:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">Writing</a>
+                <a href="#contact" class="hidden md:block text-sm font-medium hover:text-primary dark:hover:text-primary-dark transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">Contact</a>
+                 <button id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">
                      <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
                      <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                  </button>
@@ -65,191 +104,588 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center px-6 pt-20">
+    <header id="top" class="min-h-screen flex items-center justify-center px-6 pt-24">
         <div class="max-w-3xl text-center fade-in">
-            <p class="font-mono font-bold text-primary dark:text-primary-dark mb-4 tracking-wide">Hello, world! I'm</p>
+            <p class="font-mono font-bold text-primary dark:text-primary-dark mb-4 tracking-wide">SRE • Databases • Observability</p>
             <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">Enggar Ranu Hariawan</h1>
             <h2 class="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-400 mb-8">
-                Senior Database Engineer & SRE
+                Site Reliability Engineer | <span class="text-gray-500 dark:text-gray-500">Database Administrator</span>
             </h2>
             <div class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed space-y-4">
-                <p>Bridging the gap between database integrity and infrastructure reliability.</p>
-                <p>I build highly available, automated, and cost-efficient data systems for global e-commerce scale.</p>
+                <p>I build reliable systems and fast databases by combining incident-driven thinking, performance tuning, and pragmatic automation.</p>
+                <p>Monitoring & alerting, troubleshooting, query optimization, indexing strategy, and safe migrations across MySQL and Postgres.</p>
+            </div>
+            <div class="max-w-2xl mx-auto mb-10">
+                <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 text-left">
+                    <p class="text-xs font-semibold tracking-widest text-gray-500 dark:text-gray-400">CURRENT FOCUS</p>
+                    <p class="mt-2 text-xl font-semibold">Reliability + Performance</p>
+                    <p class="mt-2 text-gray-700 dark:text-gray-300">
+                        Monitoring & alerting, troubleshooting, query optimization, indexing strategy, and safe migrations across MySQL and Postgres.
+                    </p>
+                    <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50 px-4 py-3">
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Databases</p>
+                            <p class="mt-1 font-medium">MySQL • Postgres</p>
+                        </div>
+                        <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50 px-4 py-3">
+                            <p class="text-xs text-gray-600 dark:text-gray-400">SRE</p>
+                            <p class="mt-1 font-medium">Observability • On-call</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#experience" class="px-8 py-3 bg-primary dark:bg-primary-dark text-white font-medium rounded-lg hover:opacity-90 transition shadow-lg shadow-primary/20 dark:shadow-primary-dark/20">View Experience</a>
-                <a href="mailto:enggar.ranu@email.com" class="px-8 py-3 border border-gray-300 dark:border-gray-700 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">Contact Me</a>
+                <a href="#project" class="px-8 py-3 bg-primary dark:bg-primary-dark text-white font-medium rounded-lg hover:opacity-90 transition shadow-lg shadow-primary/20 dark:shadow-primary-dark/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">View Risk Insight</a>
+                <a href="#contact" class="px-8 py-3 border border-gray-300 dark:border-gray-700 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">Contact</a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 px-6">
-        <div class="max-w-3xl mx-auto fade-in">
-            <h2 class="text-3xl font-bold mb-8">About <span class="text-primary dark:text-primary-dark">Me</span></h2>
-            <div class="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                <p>My journey in tech started as a <span class="font-semibold text-gray-900 dark:text-white">Backend Engineer</span>, which gave me a deep understanding of how applications consume data. In late 2018, I pivoted to become a <span class="font-semibold text-gray-900 dark:text-white">Database Administrator</span>, focusing on performance, security, and reliability.</p>
-                <p>Currently, as a <span class="font-semibold text-gray-900 dark:text-white">Global E-Commerce SRE</span>, I leverage my DBA roots to manage massive-scale datastore migrations, automate infrastructure, and ensure zero-downtime during peak traffic.</p>
-                <p class="font-medium text-gray-900 dark:text-white">I don't just maintain databases; I engineer them to be resilient, observable, and fully automated.</p>
+    <main id="content">
+        <section aria-label="Key metrics" class="py-16 px-6">
+            <div class="max-w-5xl mx-auto fade-in">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <p class="text-3xl font-bold tracking-tight">60 TB</p>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Largest production migration (single service)</p>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <p class="text-3xl font-bold tracking-tight">TODO%</p>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Data consistency at cutover</p>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <p class="text-3xl font-bold tracking-tight">TODO+</p>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Automation tools built</p>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <p class="text-3xl font-bold tracking-tight">TODO</p>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">P0 incidents during major events</p>
+                    </div>
+                </div>
+                <p class="mt-6 text-sm text-gray-500 dark:text-gray-400">
+                    Replace TODO values with verified metrics.
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section class="py-24 px-6 bg-gray-100/50 dark:bg-gray-800/30">
-        <div class="max-w-4xl mx-auto fade-in">
-            <h2 class="text-3xl font-bold mb-12 text-center">Core <span class="text-primary dark:text-primary-dark">Competencies</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
-                    <h3 class="font-semibold text-xl mb-4">Databases</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">PostgreSQL</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">MySQL</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">ByteRDS/NDB</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Redis</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Elasticsearch</span>
+        <section id="about" class="py-24 px-6">
+            <div class="max-w-3xl mx-auto fade-in">
+                <h2 class="text-3xl font-bold mb-8">SRE with a <span class="text-primary dark:text-primary-dark">DBA background</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                    <div class="md:col-span-7 space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <p>I’m Enggar, a Site Reliability Engineer and former Database Administrator. I enjoy making systems stable, observable, and easy to operate—while keeping latency low and costs reasonable.</p>
+                        <p>My work sits at the intersection of production operations and database engineering: I tune queries, design indexing strategies, analyze slow queries, and help teams ship migrations safely.</p>
                     </div>
-                </div>
-                <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
-                    <h3 class="font-semibold text-xl mb-4">SRE & Data Ops</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Debezium</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Kafka</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Docker</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Ansible</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Prometheus</span>
-                    </div>
-                </div>
-                <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
-                    <h3 class="font-semibold text-xl mb-4">Core Skills</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Zero-Downtime Migration</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Database Tuning</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">High Availability</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Disaster Recovery</span>
-                    </div>
-                </div>
-                <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
-                    <h3 class="font-semibold text-xl mb-4">Languages</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">SQL</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Python</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Bash</span>
-                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Go</span>
+                    <div class="md:col-span-5 p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <p class="text-xs font-semibold tracking-widest text-gray-500 dark:text-gray-400">HIGHLIGHTS</p>
+                        <ul class="mt-4 space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex gap-3"><span class="text-primary dark:text-primary-dark mt-1">&#9656;</span><span>Incident response and practical troubleshooting</span></li>
+                            <li class="flex gap-3"><span class="text-primary dark:text-primary-dark mt-1">&#9656;</span><span>SLIs/SLOs, alerting, and operational excellence</span></li>
+                            <li class="flex gap-3"><span class="text-primary dark:text-primary-dark mt-1">&#9656;</span><span>Capacity planning and performance analysis</span></li>
+                            <li class="flex gap-3"><span class="text-primary dark:text-primary-dark mt-1">&#9656;</span><span>Database performance tuning with safe change management</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-24 px-6">
-        <div class="max-w-3xl mx-auto fade-in">
-            <h2 class="text-3xl font-bold mb-12">Professional <span class="text-primary dark:text-primary-dark">Experience</span></h2>
-            
-            <div class="space-y-12">
-                <!-- SRE Role -->
-                <div class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-primary dark:bg-primary-dark rounded-full"></div>
-                    <h3 class="text-xl font-bold">Global E-Commerce SRE APAC</h3>
-                    <p class="text-gray-500 dark:text-gray-400 font-medium mb-4">Bytedance &bull; 2024 &ndash; Present</p>
+        <section id="timeline" aria-label="Career timeline" class="py-24 px-6 bg-gray-100/50 dark:bg-gray-800/30">
+            <div class="max-w-3xl mx-auto fade-in">
+                <h2 class="text-3xl font-bold mb-12">Career <span class="text-primary dark:text-primary-dark">Timeline</span></h2>
+                <ol class="space-y-10">
+                    <li class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
+                        <p class="font-semibold">Laboratory Assistant</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Universitas Gunadarma • 2012 – 2014</p>
+                    </li>
+                    <li class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
+                        <p class="font-semibold">Full Stack Developer</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">PT. CNAIndo Teknologi • Oct 2014 – Nov 2015</p>
+                    </li>
+                    <li class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
+                        <p class="font-semibold">Backend / Data Engineering Roles</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">PT. Witami Tunai Mandiri • 2015 – 2018</p>
+                    </li>
+                    <li class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-primary dark:bg-primary-dark rounded-full"></div>
+                        <p class="font-semibold">Database Administrator</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Tokopedia • Dec 2018 – 2024</p>
+                    </li>
+                    <li class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-primary dark:bg-primary-dark rounded-full"></div>
+                        <p class="font-semibold">Site Reliability Engineer</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">ByteDance • Apr 2025 – Present</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 px-6">
+            <div class="max-w-4xl mx-auto fade-in">
+                <h2 class="text-3xl font-bold mb-12 text-center">Things I <span class="text-primary dark:text-primary-dark">do well</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <h3 class="font-semibold text-xl mb-4">SRE & Operations</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Monitoring</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Alerting</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Incident response</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">On-call operations</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Problem solving</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Runbooks</span>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <h3 class="font-semibold text-xl mb-4">Database</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">MySQL</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Postgres</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Performance tuning</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Query optimization</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Indexing strategy</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Slow query analysis</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Replication</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Migrations</span>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <h3 class="font-semibold text-xl mb-4">Reliability & Performance</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Capacity planning</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Bottleneck analysis</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Reliability improvements</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Troubleshooting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stack" class="py-24 px-6 bg-gray-100/50 dark:bg-gray-800/30">
+            <div class="max-w-4xl mx-auto fade-in">
+                <h2 class="text-3xl font-bold mb-12 text-center">Technology <span class="text-primary dark:text-primary-dark">Stack</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <h3 class="font-semibold text-xl mb-4">Languages</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Go</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Python</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">SQL</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Bash</span>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <h3 class="font-semibold text-xl mb-4">Database</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">MySQL</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">YugabyteDB</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Redis</span>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <h3 class="font-semibold text-xl mb-4">Streaming</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Kafka</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Debezium</span>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <h3 class="font-semibold text-xl mb-4">Infrastructure</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Docker</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Linux</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Ansible</span>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 md:col-span-2">
+                        <h3 class="font-semibold text-xl mb-4">Monitoring</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Prometheus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-24 px-6">
+            <div class="max-w-3xl mx-auto fade-in">
+                <h2 class="text-3xl font-bold mb-12">Professional <span class="text-primary dark:text-primary-dark">Experience</span></h2>
+                <div class="space-y-12">
+                    <div class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-primary dark:bg-primary-dark rounded-full"></div>
+                        <h3 class="text-xl font-bold">Site Reliability Engineer</h3>
+                        <p class="text-gray-500 dark:text-gray-400 font-medium mb-4">ByteDance · Full-time • Apr 2025 – Present · 1 yr 1 mo</p>
+                        <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+                            <li class="flex gap-3">
+                                <span class="text-primary dark:text-primary-dark mt-1">&#9656;</span>
+                                <span>Develop automation scripts using Python, Bash, and SQL to reduce repetitive database management work.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-primary dark:text-primary-dark mt-1">&#9656;</span>
+                                <span>Integrate and configure automation tooling for provisioning, scaling, and patching (TODO: name the tools that are safe to mention publicly).</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-primary dark:text-primary-dark mt-1">&#9656;</span>
+                                <span>Automate data migration processes between different database environments, with an emphasis on operational safety and repeatability.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-primary dark:text-primary-dark mt-1">&#9656;</span>
+                                <span>Set up monitoring to identify bottlenecks and apply pragmatic optimization strategies in production.</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Python</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Go</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Bash</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
+                        <h3 class="text-xl font-bold">Database Administrator</h3>
+                        <p class="text-gray-500 dark:text-gray-400 font-medium mb-4">Tokopedia · Full-time • Dec 2018 – 2024</p>
+                        <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+                            <li class="flex gap-3">
+                                <span class="text-gray-400 dark:text-gray-600 mt-1">&#9656;</span>
+                                <span>Maintain and monitor the usage, performance, integrity, and security of database servers.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-gray-400 dark:text-gray-600 mt-1">&#9656;</span>
+                                <span>Perform root cause analysis, tuning, and troubleshooting during incidents or performance degradation.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-gray-400 dark:text-gray-600 mt-1">&#9656;</span>
+                                <span>Execute routine performance assessments, health checks, and reporting based on evaluation results.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-gray-400 dark:text-gray-600 mt-1">&#9656;</span>
+                                <span>Plan and perform maintenance and migrations to improve database performance.</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Go</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm font-mono">Bash</span>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
+                        <h3 class="text-xl font-bold">Core Engineer</h3>
+                        <p class="text-gray-500 dark:text-gray-400 font-medium mb-4">Digiasia Bios • Feb 2018 – Dec 2018 · 11 mos</p>
+                        <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+                            <li class="flex gap-3">
+                                <span class="text-gray-400 dark:text-gray-600 mt-1">&#9656;</span>
+                                <span>Work on backend engineering and operational tooling (TODO: add a concrete example you can share).</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
+                        <h3 class="text-xl font-bold">Financial Reporting and Database</h3>
+                        <p class="text-gray-500 dark:text-gray-400 font-medium mb-4">PT. Witami Tunai Mandiri • Jan 2017 – Jan 2018 · 1 yr 1 mo</p>
+                        <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+                            <li class="flex gap-3">
+                                <span class="text-gray-400 dark:text-gray-600 mt-1">&#9656;</span>
+                                <span>Develop reporting data pipelines and maintain reporting servers.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-gray-400 dark:text-gray-600 mt-1">&#9656;</span>
+                                <span>Implement bi-directional replication for PostgreSQL (Postgres-BDR).</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="py-24 px-6 bg-gray-100/50 dark:bg-gray-800/30">
+            <div class="max-w-4xl mx-auto fade-in">
+                <h2 class="text-3xl font-bold mb-12 text-center">Certifications</h2>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="p-8 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <h3 class="text-xl font-bold mb-2">GCP: Complete Google Data Engineer and Cloud Architect Guide</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Udemy • Issued Jul 2025</p>
+                        <p class="mt-4 text-sm text-gray-700 dark:text-gray-300">Credential ID: UC-070feefb-64ec-471d-bd4f-da649ebd21fc</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Google Cloud Platform (GCP)</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Google Cloud Professional Data Engineer</span>
+                        </div>
+                        <a href="https://www.udemy.com/certificate/UC-070feefb-64ec-471d-bd4f-da649ebd21fc/" target="_blank" rel="noopener noreferrer" class="inline-block mt-6 text-sm font-medium text-primary dark:text-primary-dark hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">View credential</a>
+                    </div>
+
+                    <div class="p-8 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <h3 class="text-xl font-bold mb-2">SQL (Intermediate) Certificate</h3>
+                        <p class="text-gray-600 dark:text-gray-400">HackerRank • Issued Jul 2025</p>
+                        <p class="mt-4 text-sm text-gray-700 dark:text-gray-300">Credential ID: eba731858833</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">MySQL</span>
+                        </div>
+                        <a href="https://www.hackerrank.com/certificates/eba731858833" target="_blank" rel="noopener noreferrer" class="inline-block mt-6 text-sm font-medium text-primary dark:text-primary-dark hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">View credential</a>
+                    </div>
+
+                    <div class="p-8 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <h3 class="text-xl font-bold mb-2">SQL (Advanced) Certificate</h3>
+                        <p class="text-gray-600 dark:text-gray-400">HackerRank • Issued Jul 2025</p>
+                        <p class="mt-4 text-sm text-gray-700 dark:text-gray-300">Credential ID: 161ae3bf8c2f</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">MySQL</span>
+                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Databases</span>
+                        </div>
+                        <a href="https://www.hackerrank.com/certificates/161ae3bf8c2f" target="_blank" rel="noopener noreferrer" class="inline-block mt-6 text-sm font-medium text-primary dark:text-primary-dark hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">View credential</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="project" class="py-24 px-6">
+            <div class="max-w-5xl mx-auto fade-in">
+                <h2 class="text-3xl font-bold mb-12 text-center">Featured <span class="text-primary dark:text-primary-dark">Project</span></h2>
+                <div class="grid grid-cols-1 gap-8">
+                    <article class="p-8 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold">Risk Insight</h3>
+                                <p class="mt-2 text-gray-700 dark:text-gray-300">
+                                    A focused integration effort to bring multiple pieces into one reliable surface—making it easier to understand risk, spot issues, and take action.
+                                </p>
+                            </div>
+                            <div class="self-start rounded-full border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50 px-4 py-2 text-sm font-medium">
+                                SRE × DBA
+                            </div>
+                        </div>
+
+                        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50">
+                                <p class="text-xs font-semibold tracking-widest text-gray-500 dark:text-gray-400">PROBLEM</p>
+                                <ul class="mt-4 space-y-3 text-gray-700 dark:text-gray-300">
+                                    <li class="flex gap-3"><span class="text-primary dark:text-primary-dark mt-1">&#9656;</span><span>Multiple components lived in separate workflows and lacked a single insight surface.</span></li>
+                                    <li class="flex gap-3"><span class="text-primary dark:text-primary-dark mt-1">&#9656;</span><span>Operational visibility was fragmented across teams and tools.</span></li>
+                                </ul>
+                            </div>
+                            <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50">
+                                <p class="text-xs font-semibold tracking-widest text-gray-500 dark:text-gray-400">APPROACH</p>
+                                <ul class="mt-4 space-y-3 text-gray-700 dark:text-gray-300">
+                                    <li class="flex gap-3"><span class="text-primary dark:text-primary-dark mt-1">&#9656;</span><span>Integrated components into a unified Risk Insight experience with clear ownership boundaries.</span></li>
+                                    <li class="flex gap-3"><span class="text-primary dark:text-primary-dark mt-1">&#9656;</span><span>Improved reliability signals, dashboards, and alert pathways for faster diagnosis.</span></li>
+                                </ul>
+                            </div>
+                            <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50">
+                                <p class="text-xs font-semibold tracking-widest text-gray-500 dark:text-gray-400">IMPACT</p>
+                                <ul class="mt-4 space-y-3 text-gray-700 dark:text-gray-300">
+                                    <li class="flex gap-3"><span class="text-primary dark:text-primary-dark mt-1">&#9656;</span><span>A clearer path from signal → investigation → action for engineers.</span></li>
+                                    <li class="flex gap-3"><span class="text-primary dark:text-primary-dark mt-1">&#9656;</span><span>More consistent reporting and easier collaboration across stakeholders.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <p class="text-xs font-semibold tracking-widest text-gray-500 dark:text-gray-400">STACK THEMES</p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Monitoring & alerting</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Performance and reliability</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Operational workflows</span>
+                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm">Safe rollout & migrations</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="case-studies" class="p-8 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
+                        <h3 class="text-2xl font-bold mb-2">Migration Case Studies</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-8">Hybrid focus: reliability work plus database migration/CDC case studies. Replace TODO fields with details you can share publicly.</p>
+
+                        <div class="grid grid-cols-1 gap-8">
+                            <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50">
+                                <h4 class="text-xl font-semibold">PostgreSQL → MySQL Migration</h4>
+                                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">CDC-assisted cutover with verification and rollback design</p>
+
+                                <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                    <dl class="space-y-4 text-gray-700 dark:text-gray-300">
+                                        <div>
+                                            <dt class="font-semibold text-gray-900 dark:text-white">Problem</dt>
+                                            <dd class="mt-1">TODO: Why move from PostgreSQL to MySQL (constraints, operational needs, platform standardization, etc.).</dd>
+                                        </div>
+                                        <div>
+                                            <dt class="font-semibold text-gray-900 dark:text-white">Challenge</dt>
+                                            <dd class="mt-1">TODO: Data model differences, large tables, peak traffic constraints, cutover risk, and verification requirements.</dd>
+                                        </div>
+                                        <div>
+                                            <dt class="font-semibold text-gray-900 dark:text-white">Solution</dt>
+                                            <dd class="mt-1">CDC replication (Debezium → Kafka → sink), rehearsals, data validation (TODO: checksums/row counts/dual reads), and a rollback plan.</dd>
+                                        </div>
+                                        <div>
+                                            <dt class="font-semibold text-gray-900 dark:text-white">Result</dt>
+                                            <dd class="mt-1">TODO: Verified results (downtime, consistency outcome, operational effort, incident outcomes).</dd>
+                                        </div>
+                                    </dl>
+
+                                    <div class="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800">
+                                        <p class="font-semibold mb-4">Reference Architecture</p>
+                                        <svg role="img" aria-label="CDC migration architecture diagram" viewBox="0 0 760 220" class="w-full h-auto">
+                                            <defs>
+                                                <style>
+                                                    .box { fill: none; stroke: #94a3b8; stroke-width: 2; }
+                                                    .arrow { stroke: #047857; stroke-width: 3; fill: none; }
+                                                    .label { fill: currentColor; font: 14px Inter, sans-serif; }
+                                                    .sub { fill: #64748b; font: 12px Inter, sans-serif; }
+                                                </style>
+                                                <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+                                                    <path d="M0,0 L10,4 L0,8" fill="#047857"></path>
+                                                </marker>
+                                            </defs>
+                                            <rect x="20" y="60" width="140" height="80" rx="12" class="box"></rect>
+                                            <text x="90" y="92" text-anchor="middle" class="label">PostgreSQL</text>
+                                            <text x="90" y="114" text-anchor="middle" class="sub">Source</text>
+
+                                            <rect x="210" y="60" width="140" height="80" rx="12" class="box"></rect>
+                                            <text x="280" y="92" text-anchor="middle" class="label">Debezium</text>
+                                            <text x="280" y="114" text-anchor="middle" class="sub">CDC</text>
+
+                                            <rect x="400" y="60" width="140" height="80" rx="12" class="box"></rect>
+                                            <text x="470" y="92" text-anchor="middle" class="label">Kafka</text>
+                                            <text x="470" y="114" text-anchor="middle" class="sub">Event log</text>
+
+                                            <rect x="590" y="60" width="150" height="80" rx="12" class="box"></rect>
+                                            <text x="665" y="92" text-anchor="middle" class="label">Sink</text>
+                                            <text x="665" y="114" text-anchor="middle" class="sub">JDBC / custom</text>
+
+                                            <rect x="590" y="160" width="150" height="80" rx="12" class="box"></rect>
+                                            <text x="665" y="192" text-anchor="middle" class="label">MySQL</text>
+                                            <text x="665" y="214" text-anchor="middle" class="sub">Target</text>
+
+                                            <path d="M160 100 L210 100" class="arrow" marker-end="url(#arrowhead)"></path>
+                                            <path d="M350 100 L400 100" class="arrow" marker-end="url(#arrowhead)"></path>
+                                            <path d="M540 100 L590 100" class="arrow" marker-end="url(#arrowhead)"></path>
+                                            <path d="M665 140 L665 160" class="arrow" marker-end="url(#arrowhead)"></path>
+                                        </svg>
+                                        <p class="mt-4 text-sm text-gray-600 dark:text-gray-400">Diagram is intentionally simplified. Update labels to match the exact components used (TODO).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50">
+                                <h4 class="text-xl font-semibold">Cross-Cloud Migration Framework</h4>
+                                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Repeatable framework for safe migrations across environments (incl. ByteCloud)</p>
+                                <dl class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700 dark:text-gray-300">
+                                    <div>
+                                        <dt class="font-semibold text-gray-900 dark:text-white">Problem</dt>
+                                        <dd class="mt-1">TODO: Need to migrate between clouds/environments while keeping operational risk low.</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="font-semibold text-gray-900 dark:text-white">Challenge</dt>
+                                        <dd class="mt-1">TODO: Network constraints, credentials separation, schema drift, and cutover coordination.</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="font-semibold text-gray-900 dark:text-white">Solution</dt>
+                                        <dd class="mt-1">Automate provisioning, CDC setup, validation workflows, and controlled cutover steps with runbooks and guardrails.</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="font-semibold text-gray-900 dark:text-white">Result</dt>
+                                        <dd class="mt-1">TODO: Verified outcomes (repeatability, reduced manual effort, reduced change risk).</dd>
+                                    </div>
+                                </dl>
+                            </div>
+
+                            <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50">
+                                <h4 class="text-xl font-semibold">Debezium Automation</h4>
+                                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Operational tooling for connector lifecycle and safety</p>
+                                <dl class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700 dark:text-gray-300">
+                                    <div>
+                                        <dt class="font-semibold text-gray-900 dark:text-white">Problem</dt>
+                                        <dd class="mt-1">TODO: Managing many connectors manually is risky and time-consuming.</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="font-semibold text-gray-900 dark:text-white">Challenge</dt>
+                                        <dd class="mt-1">TODO: Connector config correctness, offset handling, schema changes, safe restarts, and backpressure.</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="font-semibold text-gray-900 dark:text-white">Solution</dt>
+                                        <dd class="mt-1">Build tooling for templating configs, verifying permissions, controlled deployment, and health checks for connectors.</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="font-semibold text-gray-900 dark:text-white">Result</dt>
+                                        <dd class="mt-1">TODO: Verified outcomes (fewer manual changes, faster setup, lower operational risk).</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="writing" class="py-24 px-6">
+            <div class="max-w-4xl mx-auto fade-in">
+                <h2 class="text-3xl font-bold mb-12 text-center">Technical <span class="text-primary dark:text-primary-dark">Writing</span></h2>
+                <div class="p-8 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800">
                     <ul class="space-y-4 text-gray-700 dark:text-gray-300">
-                        <li class="flex gap-3">
+                        <li class="flex items-start gap-3">
                             <span class="text-primary dark:text-primary-dark mt-1">&#9656;</span>
-                            <span><strong class="text-gray-900 dark:text-white">Massive Datastore Migration:</strong> Led the end-to-end migration of Tokopedia’s core datastores to ByteCloud. Engineered a custom migration framework handling complex partition tables, achieving 99.9% data consistency.</span>
+                            <span>Lessons Learned from Large-Scale Database Migration (TODO)</span>
                         </li>
-                        <li class="flex gap-3">
+                        <li class="flex items-start gap-3">
                             <span class="text-primary dark:text-primary-dark mt-1">&#9656;</span>
-                            <span><strong class="text-gray-900 dark:text-white">Zero-Downtime Automation:</strong> Built and standardized 4 data migration frameworks. Developed 10+ automation scripts (Debezium, Kafka, Docker) that reduced manual migration intervention by 80%.</span>
+                            <span>Debezium Performance Tuning: What Actually Matters (TODO)</span>
                         </li>
-                        <li class="flex gap-3">
+                        <li class="flex items-start gap-3">
                             <span class="text-primary dark:text-primary-dark mt-1">&#9656;</span>
-                            <span><strong class="text-gray-900 dark:text-white">Peak Traffic Stability:</strong> Guaranteed datastore stability with <strong>0 P0 incidents</strong> during Tokopedia’s largest mega-sales (Ramadhan Big Sale, Double-Date) for over a year.</span>
+                            <span>CDC Pitfalls: Consistency, Ordering, and Operational Reality (TODO)</span>
                         </li>
-                        <li class="flex gap-3">
+                        <li class="flex items-start gap-3">
                             <span class="text-primary dark:text-primary-dark mt-1">&#9656;</span>
-                            <span><strong class="text-gray-900 dark:text-white">Observability & Governance:</strong> Established Polaris Success Metrics and Firemaps. Standardized L0 Core Links monitoring, giving product teams full visibility into MTTD and Recall Rates.</span>
+                            <span>Database Reliability Basics: Backups, Failover, and Guardrails (TODO)</span>
                         </li>
                     </ul>
                 </div>
-
-                <!-- DBA Role -->
-                <div class="relative pl-8 border-l-2 border-gray-200 dark:border-gray-700">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
-                    <h3 class="text-xl font-bold">Senior Database Administrator</h3>
-                    <p class="text-gray-500 dark:text-gray-400 font-medium mb-4">Tokopedia / GoTo &bull; 2018 &ndash; 2024</p>
-                    <ul class="space-y-4 text-gray-700 dark:text-gray-300">
-                        <li class="flex gap-3">
-                            <span class="text-gray-400 dark:text-gray-600 mt-1">&#9656;</span>
-                            <span><strong class="text-gray-900 dark:text-white">Performance & Reliability:</strong> Managed performance, integrity, and security for enterprise database servers. Conducted routine health checks, root cause analysis, and proactive tuning.</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="text-gray-400 dark:text-gray-600 mt-1">&#9656;</span>
-                            <span><strong class="text-gray-900 dark:text-white">High Availability Architecture:</strong> Designed and implemented robust replication methods, connection pooling (PgBouncer), and load balancers to ensure high availability.</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="text-gray-400 dark:text-gray-600 mt-1">&#9656;</span>
-                            <span><strong class="text-gray-900 dark:text-white">Disaster Recovery & Security:</strong> Developed comprehensive backup/recovery plans (RPO/RTO) and managed access controls for PCI DSS recertification and audits.</span>
-                        </li>
-                    </ul>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 px-6 bg-gray-100/50 dark:bg-gray-800/30">
-        <div class="max-w-4xl mx-auto fade-in">
-            <h2 class="text-3xl font-bold mb-12 text-center">Featured <span class="text-primary dark:text-primary-dark">Projects</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project 1 -->
-                <div class="p-8 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition">
-                    <h3 class="text-xl font-bold mb-2">Habound</h3>
-                    <p class="text-sm text-primary dark:text-primary-dark font-mono mb-4">Centralized Config Manager</p>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6">Built a centralized configuration management tool for hundreds of PostgreSQL databases and PgBouncer instances. Eliminated configuration drift and standardized deployments across the infrastructure.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">PostgreSQL</span>
-                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">PgBouncer</span>
-                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">Ansible</span>
-                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">Git</span>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="p-8 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition">
-                    <h3 class="text-xl font-bold mb-2">Cross-Cloud Migration Framework</h3>
-                    <p class="text-sm text-primary dark:text-primary-dark font-mono mb-4">Automated Zero-Downtime Pipeline</p>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6">Architected a fully automated migration framework from PostgreSQL (GCP) to MySQL (ByteCloud). Handled complex data type transformations and built automated rollback mechanisms with zero data loss.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">Debezium</span>
-                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">Kafka</span>
-                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">Docker</span>
-                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs font-mono">Python</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer / Contact -->
-    <footer class="py-16 px-6 text-center border-t border-gray-200 dark:border-gray-800">
+    <footer id="contact" class="py-16 px-6 text-center border-t border-gray-200 dark:border-gray-800">
         <div class="max-w-2xl mx-auto fade-in">
-            <h2 class="text-3xl font-bold mb-4">Let's build resilient data systems.</h2>
-            <p class="text-gray-600 dark:text-gray-400 mb-8">I'm currently open to new opportunities in Database Engineering, Data Reliability, and SRE roles (Remote / APAC).</p>
-            <a href="mailto:enggar.ranu@email.com" class="inline-block px-8 py-3 bg-primary dark:bg-primary-dark text-white font-medium rounded-lg hover:opacity-90 transition shadow-lg shadow-primary/20 dark:shadow-primary-dark/20">Get in Touch</a>
-            
+            <h2 class="text-3xl font-bold mb-4">Let’s connect</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-8">
+                Want to talk about reliability, database performance, monitoring, or migrations? Reach out and I’ll get back to you.
+            </p>
+            <a href="mailto:enggar.ranu@gmail.com" class="inline-block px-8 py-3 bg-primary dark:bg-primary-dark text-white font-medium rounded-lg hover:opacity-90 transition shadow-lg shadow-primary/20 dark:shadow-primary-dark/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">Email Me</a>
+
             <div class="flex justify-center space-x-6 mt-10 text-gray-500 dark:text-gray-400">
-                 <a href="https://linkedin.com/in/enggarranu" target="_blank" rel="noopener noreferrer" class="hover:text-primary dark:hover:text-primary-dark transition">LinkedIn</a>
-                 <a href="https://github.com/enggarranu" target="_blank" rel="noopener noreferrer" class="hover:text-primary dark:hover:text-primary-dark transition">GitHub</a>
-                <a href="mailto:enggar.ranu@email.com" class="hover:text-primary dark:hover:text-primary-dark transition">Email</a>
+                <a href="mailto:enggar.ranu@gmail.com" class="hover:text-primary dark:hover:text-primary-dark transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">Email</a>
+                <a href="https://www.linkedin.com/in/enggarranu/" target="_blank" rel="noopener noreferrer" class="hover:text-primary dark:hover:text-primary-dark transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">LinkedIn</a>
+                <a href="https://github.com/enggarranu" target="_blank" rel="noopener noreferrer" class="hover:text-primary dark:hover:text-primary-dark transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">GitHub</a>
+                <a href="https://medium.com/@enggar.ranu" target="_blank" rel="noopener noreferrer" class="hover:text-primary dark:hover:text-primary-dark transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAFAFA] dark:focus-visible:ring-offset-[#0F172A]">Medium</a>
             </div>
-            <p class="mt-12 text-sm text-gray-400">&copy; 2026 Enggar Ranu Hariawan. Crafted with care.</p>
+
+            <div class="mt-10 p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 text-left">
+                <p class="text-xs font-semibold tracking-widest text-gray-500 dark:text-gray-400">DETAILS</p>
+                <dl class="mt-4 grid grid-cols-1 gap-4 text-sm">
+                    <div>
+                        <dt class="text-gray-600 dark:text-gray-400">Email</dt>
+                        <dd class="font-medium">enggar.ranu@gmail.com</dd>
+                    </div>
+                    <div>
+                        <dt class="text-gray-600 dark:text-gray-400">LinkedIn</dt>
+                        <dd class="font-medium">/in/enggarranu</dd>
+                    </div>
+                    <div>
+                        <dt class="text-gray-600 dark:text-gray-400">GitHub</dt>
+                        <dd class="font-medium">github.com/enggarranu</dd>
+                    </div>
+                    <div>
+                        <dt class="text-gray-600 dark:text-gray-400">Medium</dt>
+                        <dd class="font-medium">medium.com/@enggar.ranu</dd>
+                    </div>
+                </dl>
+            </div>
+            <p class="mt-12 text-sm text-gray-400">&copy; 2026 Enggar Ranu Hariawan.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        // Dark Mode Toggle
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -257,9 +693,11 @@
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
             themeToggleLightIcon.classList.remove('hidden');
+            themeToggleBtn.setAttribute('aria-pressed', 'true');
         } else {
             document.documentElement.classList.remove('dark');
             themeToggleDarkIcon.classList.remove('hidden');
+            themeToggleBtn.setAttribute('aria-pressed', 'false');
         }
 
         themeToggleBtn.addEventListener('click', function() {
@@ -269,22 +707,25 @@
                 if (localStorage.getItem('color-theme') === 'light') {
                     document.documentElement.classList.add('dark');
                     localStorage.setItem('color-theme', 'dark');
+                    themeToggleBtn.setAttribute('aria-pressed', 'true');
                 } else {
                     document.documentElement.classList.remove('dark');
                     localStorage.setItem('color-theme', 'light');
+                    themeToggleBtn.setAttribute('aria-pressed', 'false');
                 }
             } else {
                 if (document.documentElement.classList.contains('dark')) {
                     document.documentElement.classList.remove('dark');
                     localStorage.setItem('color-theme', 'light');
+                    themeToggleBtn.setAttribute('aria-pressed', 'false');
                 } else {
                     document.documentElement.classList.add('dark');
                     localStorage.setItem('color-theme', 'dark');
+                    themeToggleBtn.setAttribute('aria-pressed', 'true');
                 }
             }
         });
 
-        // Simple Scroll Reveal Animation
         const faders = document.querySelectorAll('.fade-in');
         const appearOptions = { threshold: 0.15 };
         const appearOnScroll = new IntersectionObserver(function(entries, observer) {
