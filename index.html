@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enggar Ranu Hariawan | Site Reliability Engineer | Database Platform Engineering</title>
+<meta name="description" content="Site Reliability Engineer specializing in database platform engineering, migration architecture, and reliability engineering. Tech Lead for a 156-service, 40TB+ PostgreSQL-to-MySQL migration at Tokopedia × ByteDance with zero data loss.">
+<meta name="author" content="Enggar Ranu Hariawan">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0B1120">
+<link rel="canonical" href="https://enggarranu.github.io/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Enggar Ranu Hariawan">
+<meta property="og:title" content="Enggar Ranu Hariawan | Site Reliability Engineer | Database Platform Engineering">
+<meta property="og:description" content="Tech Lead for Tokopedia's PostgreSQL-to-MySQL migration following the ByteDance acquisition — 156 services, 40TB+, zero data loss. SRE specializing in migration architecture and reliability engineering.">
+<meta property="og:url" content="https://enggarranu.github.io/">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Enggar Ranu Hariawan | Site Reliability Engineer">
+<meta name="twitter:description" content="Database Platform Engineering, Migration Architecture, and Reliability Engineering. Ex-Tokopedia & ByteDance.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233B82F6'/%3E%3Cstop offset='1' stop-color='%2310B981'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-size='28' font-family='monospace' font-weight='700' fill='white' text-anchor='middle'%3EER%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Enggar Ranu Hariawan",
+  "url": "https://enggarranu.github.io/",
+  "jobTitle": "Site Reliability Engineer",
+  "worksFor": { "@type": "Organization", "name": "ByteDance" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universitas Gunadarma" },
+  "address": { "@type": "PostalAddress", "addressRegion": "DKI Jakarta", "addressCountry": "ID" },
+  "knowsAbout": ["Site Reliability Engineering", "Database Migration", "PostgreSQL", "MySQL", "Change Data Capture", "Debezium", "Kafka", "Infrastructure Automation", "Platform Engineering"],
+  "sameAs": [
+    "https://www.linkedin.com/in/enggarranu",
+    "https://github.com/enggarranu"
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="container nav__inner">
+    <a href="#top" class="nav__brand">
+      <span class="nav__brand-mark" aria-hidden="true">ER</span>
+      <span>Enggar Ranu</span>
+    </a>
+    <div class="nav__links" id="nav-links">
+      <a class="nav__link" href="#impact">Impact</a>
+      <a class="nav__link" href="#journey">Journey</a>
+      <a class="nav__link" href="#projects">Projects</a>
+      <a class="nav__link" href="#experience">Experience</a>
+      <a class="nav__link" href="#leadership">Leadership</a>
+      <a class="nav__link" href="#contact">Contact</a>
+    </div>
+    <div class="nav__actions">
+      <button class="nav__toggle-btn" id="theme-toggle" aria-label="Toggle light and dark theme" aria-pressed="false">
+        <svg id="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+      </button>
+      <button class="nav__toggle-btn nav__mobile-toggle" id="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#impact">Impact</a>
+  <a href="#journey">Journey</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#leadership">Leadership</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<header class="hero" id="top">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero__grid">
+      <div class="reveal">
+        <p class="eyebrow">Site Reliability Engineer &middot; Database Platform Engineering</p>
+        <h1 class="hero__name">Enggar Ranu Hariawan</h1>
+        <p class="hero__identity">
+          I design <strong>database platforms</strong> that let large-scale production systems <strong>migrate safely, operate reliably,</strong> and scale predictably.
+        </p>
+        <p class="hero__summary">
+          Tech Lead for Tokopedia's PostgreSQL-to-MySQL migration following the ByteDance acquisition — co-designing the migration architecture, engineering standards, and automation that moved 156 database services and 40TB+ of production data with zero data loss.
+        </p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="https://www.linkedin.com/in/enggarranu" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+          <a class="btn btn--secondary" href="https://github.com/enggarranu" target="_blank" rel="noopener noreferrer">View GitHub</a>
+          <a class="btn btn--ghost" href="#projects">See featured work &darr;</a>
+        </div>
+        <div class="hero__badges">
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">Debezium</span>
+          <span class="chip">Kafka</span>
+          <span class="chip">Go</span>
+          <span class="chip">Python</span>
+          <span class="chip">Terraform</span>
+        </div>
+      </div>
+
+      <div class="hero__panel reveal" style="transition-delay:.1s">
+        <div class="hero-card">
+          <p class="hero-card__label">PSM Migration &middot; Tokopedia &times; ByteDance</p>
+          <p class="hero-card__value"><span data-count="156">0</span><small>services &middot; 43 P0</small></p>
+          <p class="hero-card__desc">40TB+ migrated with zero data loss and under 5 minutes of cutover downtime.</p>
+        </div>
+        <div class="hero-metrics-mini">
+          <div class="hero-card">
+            <p class="hero-card__label">Clusters Owned</p>
+            <p class="hero-card__value"><span data-count="408">0</span>+</p>
+          </div>
+          <div class="hero-card">
+            <p class="hero-card__label">Platform Uptime</p>
+            <p class="hero-card__value"><span data-count="99.9" data-decimals="1">0</span>%+</p>
+          </div>
+          <div class="hero-card">
+            <p class="hero-card__label">PCI DSS</p>
+            <p class="hero-card__value"><span data-count="100">0</span>%</p>
+          </div>
+          <div class="hero-card">
+            <p class="hero-card__label">Setup Time Cut</p>
+            <p class="hero-card__value"><span data-count="98">0</span>%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">SCROLL<br>&darr;</div>
+</header>
+
+<main id="main">
+
+  <section class="section" id="impact" aria-labelledby="impact-title">
+    <div class="container">
+      <p class="eyebrow reveal">Selected Engineering Impact</p>
+      <h2 class="section-title reveal" id="impact-title">Numbers before <span class="text-gradient">narrative</span>.</h2>
+      <p class="section-lede reveal">Every figure below is drawn directly from delivered production work — migration programs, compliance audits, and platform reliability across hundreds of database clusters.</p>
+
+      <div class="metric-grid reveal-stagger">
+        <article class="metric-card">
+          <p class="metric-card__category">Migration Architecture</p>
+          <p class="metric-card__value"><span data-count="408">0</span>+</p>
+          <h3 class="metric-card__title">Production Database Fleet</h3>
+          <p class="metric-card__desc">Tech Lead for a heterogeneous migration program spanning 408+ production clusters across PostgreSQL, MySQL, and YugabyteDB.</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-card__category">Migration Execution</p>
+          <p class="metric-card__value"><span data-count="156">0</span> <small style="font-size:15px;color:var(--text-secondary)">(43 P0)</small></p>
+          <h3 class="metric-card__title">Database Services Migrated</h3>
+          <p class="metric-card__desc">PostgreSQL to MySQL, following the ByteDance acquisition — with zero data loss across every cutover.</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-card__category">Data Scale</p>
+          <p class="metric-card__value"><span data-count="40">0</span>TB+</p>
+          <h3 class="metric-card__title">Data Migrated, Zero Loss</h3>
+          <p class="metric-card__desc">40TB+ moved in production with zero data loss and under 5 minutes of cutover downtime.</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-card__category">Automation</p>
+          <p class="metric-card__value"><span data-count="98">0</span>%</p>
+          <h3 class="metric-card__title">Faster Migration Setup</h3>
+          <p class="metric-card__desc">Automation cut migration setup time from 5 days to 2 hours, and overall migration speed by 70%.</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-card__category">Cost Engineering</p>
+          <p class="metric-card__value">~$<span data-count="331">0</span>K<small style="font-size:15px;color:var(--text-secondary)">/mo</small></p>
+          <h3 class="metric-card__title">Infrastructure Cost Reduction</h3>
+          <p class="metric-card__desc">~25% infrastructure cost reduction delivered through platform migration.</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-card__category">Platform Migration</p>
+          <p class="metric-card__value"><span data-count="94.2" data-decimals="1">0</span>%</p>
+          <h3 class="metric-card__title">ByteNDB Migration Savings</h3>
+          <p class="metric-card__desc">Led the ByteNDB migration eliminating legacy RDS dependency — ~$5.2K saved per day.</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-card__category">Compliance</p>
+          <p class="metric-card__value"><span data-count="100">0</span>%</p>
+          <h3 class="metric-card__title">PCI DSS Compliance</h3>
+          <p class="metric-card__desc">100% compliant across multiple audit cycles by embedding security into engineering standards.</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-card__category">Reliability Engineering</p>
+          <p class="metric-card__value"><span data-count="99.9" data-decimals="1">0</span>%+</p>
+          <h3 class="metric-card__title">Platform Uptime</h3>
+          <p class="metric-card__desc">Sustained across 400+ databases during major traffic events.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="journey" aria-labelledby="journey-title">
+    <div class="container">
+      <p class="eyebrow reveal">Engineering Journey</p>
+      <h2 class="section-title reveal" id="journey-title">From Java developer to <span class="text-gradient">migration tech lead</span>.</h2>
+      <p class="section-lede reveal">Eleven years of progressively larger engineering responsibility — from backend development to leading a company-scale database migration program.</p>
+
+      <ol class="timeline reveal">
+        <li class="timeline-item">
+          <span class="timeline-item__dot"></span>
+          <p class="timeline-item__meta">2012 &ndash; 2014</p>
+          <h3 class="timeline-item__title">Laboratory Assistant</h3>
+          <p class="timeline-item__org">Universitas Gunadarma</p>
+          <p class="timeline-item__desc">Informatics Engineering and Computer Development Division — the starting point of a software engineering foundation.</p>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-item__dot"></span>
+          <p class="timeline-item__meta">Oct 2014 &ndash; Nov 2015</p>
+          <h3 class="timeline-item__title">Full Stack Developer</h3>
+          <p class="timeline-item__org">PT. CNAIndo Teknologi</p>
+          <p class="timeline-item__desc">Built brokerage and trading systems for securities clients — BOFIS for NH Korindo Securities and the BEST online trading platform for BCA Sekuritas — using Oracle, C, Python, PHP, and Java.</p>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-item__dot"></span>
+          <p class="timeline-item__meta">Nov 2015 &ndash; Jan 2018</p>
+          <h3 class="timeline-item__title">Java Developer &rarr; Backend Developer &rarr; Financial Reporting &amp; Database</h3>
+          <p class="timeline-item__org">PT. Witami Tunai Mandiri</p>
+          <p class="timeline-item__desc">Grew from building transaction websites and Postgres functions into owning reporting pipelines and standing up bi-directional replication (Postgres-BDR) — the first real database engineering depth.</p>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-item__dot"></span>
+          <p class="timeline-item__meta">Feb 2018 &ndash; Dec 2018</p>
+          <h3 class="timeline-item__title">Core Engineer</h3>
+          <p class="timeline-item__org">Digiasia Bios</p>
+          <p class="timeline-item__desc">Designed and maintained backend infrastructure for fintech services, building automation and database solutions for internal platforms.</p>
+        </li>
+        <li class="timeline-item is-current">
+          <span class="timeline-item__dot"></span>
+          <p class="timeline-item__meta">Dec 2018 &ndash; Present</p>
+          <h3 class="timeline-item__title">Senior Database Administrator</h3>
+          <p class="timeline-item__org">Tokopedia</p>
+          <p class="timeline-item__desc">Owned reliability and migration engineering across hundreds of production clusters — Aliyun-to-GCP, YugabyteDB, PostgreSQL upgrades, and PCI DSS compliance — through the ByteDance acquisition and beyond.</p>
+        </li>
+        <li class="timeline-item is-current">
+          <span class="timeline-item__dot"></span>
+          <p class="timeline-item__meta">Apr 2025 &ndash; Present</p>
+          <h3 class="timeline-item__title">Site Reliability Engineer</h3>
+          <p class="timeline-item__org">ByteDance</p>
+          <p class="timeline-item__desc">Tech Lead for the PostgreSQL-to-MySQL migration program — architecture, automation, engineering standards, and mentoring across the migration team.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="principles" aria-labelledby="principles-title">
+    <div class="container">
+      <p class="eyebrow reveal">Engineering Principles</p>
+      <h2 class="section-title reveal" id="principles-title">How I make <span class="text-gradient">migration decisions</span>.</h2>
+      <p class="section-lede reveal">The same principles apply whether the cutover moves 4TB or 40TB.</p>
+
+      <div class="principle-grid reveal-stagger">
+        <article class="principle-card"><span class="principle-card__num">01</span><div><p class="principle-card__title">Build Platforms, Not Projects</p><p class="principle-card__statement">The most valuable engineering work creates reusable systems rather than isolated, one-off migrations.</p></div></article>
+        <article class="principle-card"><span class="principle-card__num">02</span><div><p class="principle-card__title">Design for Rollback First</p><p class="principle-card__statement">Every production cutover ships with a tested recovery path before it ships with a deadline.</p></div></article>
+        <article class="principle-card"><span class="principle-card__num">03</span><div><p class="principle-card__title">Automation Reduces Operational Risk</p><p class="principle-card__statement">Manual, repetitive steps are where migrations fail — automate provisioning, validation, and rollback out of human hands.</p></div></article>
+        <article class="principle-card"><span class="principle-card__num">04</span><div><p class="principle-card__title">Reliability Before Velocity</p><p class="principle-card__statement">Moving fast has no value if a 40TB cutover isn't safe to reverse.</p></div></article>
+        <article class="principle-card"><span class="principle-card__num">05</span><div><p class="principle-card__title">Standardization Enables Scale</p><p class="principle-card__statement">408+ clusters can't run on individual tribal knowledge — they run on shared, documented standards.</p></div></article>
+        <article class="principle-card"><span class="principle-card__num">06</span><div><p class="principle-card__title">Measure Before Optimizing</p><p class="principle-card__statement">Validation, checksums, and dashboards come before any performance or reliability claim.</p></div></article>
+        <article class="principle-card"><span class="principle-card__num">07</span><div><p class="principle-card__title">Documentation Is Part of Engineering</p><p class="principle-card__statement">A migration isn't finished until another engineer can run it without me in the room.</p></div></article>
+        <article class="principle-card"><span class="principle-card__num">08</span><div><p class="principle-card__title">Own the Outcome</p><p class="principle-card__statement">Ownership extends past cutover — into monitoring, incident response, and the next migration wave.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="projects" aria-labelledby="projects-title">
+    <div class="container">
+      <p class="eyebrow reveal">Featured Work</p>
+      <h2 class="section-title reveal" id="projects-title">Case studies, not <span class="text-gradient">bullet points</span>.</h2>
+      <p class="section-lede reveal">Four engineering programs that show the same pattern: standardize, automate, validate, then scale.</p>
+
+      <article class="project-card reveal">
+        <div class="project-card__head">
+          <div>
+            <h3 class="project-card__title">PostgreSQL &rarr; MySQL Migration Platform</h3>
+            <p class="project-card__summary">Tech Lead for Tokopedia's PostgreSQL-to-MySQL migration program following the ByteDance acquisition — one of the company's largest database modernization initiatives.</p>
+          </div>
+          <span class="chip chip--accent">Migration Architecture</span>
+        </div>
+        <div class="project-card__grid">
+          <div class="project-block">
+            <p class="project-block__label">Problem</p>
+            <ul><li>Production ran on PostgreSQL while the post-acquisition platform standardized on MySQL, at a scale where dump-and-restore wasn't viable.</li></ul>
+          </div>
+          <div class="project-block">
+            <p class="project-block__label">Engineering Decisions</p>
+            <ul>
+              <li>Co-designed CDC-based migration architecture (Debezium &rarr; Kafka) instead of downtime-heavy bulk copies.</li>
+              <li>Separated validation from execution and designed rollback before cutover.</li>
+              <li>Served as a technical approver in Go/No-Go production decisions.</li>
+            </ul>
+          </div>
+          <div class="project-block">
+            <p class="project-block__label">Architecture</p>
+            <ul>
+              <li>Provisioning &rarr; CDC replication &rarr; validation &rarr; cutover &rarr; rollback, all standardized as reusable platform capabilities.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-card__impact">
+          <div class="impact-stat"><p class="impact-stat__value">156 (43 P0)</p><p class="impact-stat__label">Services migrated</p></div>
+          <div class="impact-stat"><p class="impact-stat__value">40TB+</p><p class="impact-stat__label">Data moved</p></div>
+          <div class="impact-stat"><p class="impact-stat__value">Zero</p><p class="impact-stat__label">Data loss</p></div>
+          <div class="impact-stat"><p class="impact-stat__value">&lt;5 min</p><p class="impact-stat__label">Cutover downtime</p></div>
+        </div>
+        <div class="project-card__footer">
+          <p class="project-card__lessons">"Reliable migration depends more on architecture and rehearsal than on tooling."</p>
+          <div class="tech-row">
+            <span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">Debezium</span><span class="chip">Kafka</span><span class="chip">Go</span><span class="chip">Terraform</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-card__head">
+          <div>
+            <h3 class="project-card__title">Migration Automation Framework</h3>
+            <p class="project-card__summary">End-to-end automation for provisioning, validation, rollback, and monitoring — turning manual migration setup into a repeatable platform capability.</p>
+          </div>
+          <span class="chip chip--accent">Automation</span>
+        </div>
+        <div class="project-card__grid">
+          <div class="project-block">
+            <p class="project-block__label">Problem</p>
+            <ul><li>Manual migration setup consumed days per service and introduced inconsistency across engineers running the same steps.</li></ul>
+          </div>
+          <div class="project-block">
+            <p class="project-block__label">Engineering Decisions</p>
+            <ul><li>Standardized provisioning scripts and shared configuration across every migration wave.</li><li>Automated validation checkpoints and a rollback framework triggered by health checks.</li></ul>
+          </div>
+          <div class="project-block">
+            <p class="project-block__label">Stack</p>
+            <ul><li>Go and Python for automation, Terraform and Ansible for provisioning and deployment.</li></ul>
+          </div>
+        </div>
+        <div class="project-card__impact">
+          <div class="impact-stat"><p class="impact-stat__value">98% faster</p><p class="impact-stat__label">Setup: 5 days &rarr; 2 hours</p></div>
+          <div class="impact-stat"><p class="impact-stat__value">70% faster</p><p class="impact-stat__label">Overall migration speed</p></div>
+        </div>
+        <div class="project-card__footer">
+          <p class="project-card__lessons">"Automation should remove operational complexity — not just hide it behind a script."</p>
+          <div class="tech-row"><span class="chip">Go</span><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">Terraform</span><span class="chip">Ansible</span></div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-card__head">
+          <div>
+            <h3 class="project-card__title">ByteNDB Migration &amp; Cost Engineering</h3>
+            <p class="project-card__summary">Led the migration off legacy managed RDS onto ByteNDB, removing a costly dependency while preserving production reliability.</p>
+          </div>
+          <span class="chip chip--accent">Cost Engineering</span>
+        </div>
+        <div class="project-card__grid">
+          <div class="project-block">
+            <p class="project-block__label">Problem</p>
+            <ul><li>Legacy RDS dependency carried high per-day infrastructure cost with limited architectural flexibility.</li></ul>
+          </div>
+          <div class="project-block">
+            <p class="project-block__label">Engineering Decisions</p>
+            <ul><li>Planned and executed migration onto ByteNDB, validated against real production workloads before cutover.</li></ul>
+          </div>
+          <div class="project-block">
+            <p class="project-block__label">Outcome</p>
+            <ul><li>Eliminated the legacy dependency entirely rather than resizing around it.</li></ul>
+          </div>
+        </div>
+        <div class="project-card__impact">
+          <div class="impact-stat"><p class="impact-stat__value">94.2%</p><p class="impact-stat__label">Cost reduction</p></div>
+          <div class="impact-stat"><p class="impact-stat__value">~$5.2K/day</p><p class="impact-stat__label">Savings</p></div>
+          <div class="impact-stat"><p class="impact-stat__value">~$331K/mo</p><p class="impact-stat__label">Platform-wide reduction</p></div>
+        </div>
+        <div class="project-card__footer">
+          <p class="project-card__lessons">"The best cost engineering wins come from removing dependencies, not just resizing them."</p>
+          <div class="tech-row"><span class="chip">ByteNDB</span><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">CloudSQL</span></div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-card__head">
+          <div>
+            <h3 class="project-card__title">PCI DSS Compliance &amp; Reliability Program</h3>
+            <p class="project-card__summary">Delivered engineering work supporting PCI DSS compliance while sustaining 99.9%+ uptime across 400+ production databases through major traffic events.</p>
+          </div>
+          <span class="chip chip--accent">Security &amp; Compliance</span>
+        </div>
+        <div class="project-card__grid">
+          <div class="project-block">
+            <p class="project-block__label">Problem</p>
+            <ul><li>Compliance requirements introduced operational and security constraints without an existing playbook at this scale.</li></ul>
+          </div>
+          <div class="project-block">
+            <p class="project-block__label">Engineering Decisions</p>
+            <ul><li>Collaborated directly with auditors and embedded compliance checks into standard operating procedures.</li><li>Improved monitoring, alerting, and backup validation across the fleet.</li></ul>
+          </div>
+          <div class="project-block">
+            <p class="project-block__label">Outcome</p>
+            <ul><li>Compliance became a property of the standard process, not a pre-audit scramble.</li></ul>
+          </div>
+        </div>
+        <div class="project-card__impact">
+          <div class="impact-stat"><p class="impact-stat__value">100%</p><p class="impact-stat__label">PCI DSS compliant</p></div>
+          <div class="impact-stat"><p class="impact-stat__value">99.9%+</p><p class="impact-stat__label">Uptime, 400+ databases</p></div>
+        </div>
+        <div class="project-card__footer">
+          <p class="project-card__lessons">"Security is most effective when it's built into engineering process, not bolted on before an audit."</p>
+          <div class="tech-row"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">Monitoring</span><span class="chip">Governance</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="architecture" aria-labelledby="architecture-title">
+    <div class="container">
+      <p class="eyebrow reveal">Migration Architecture</p>
+      <h2 class="section-title reveal" id="architecture-title">The lifecycle behind every <span class="text-gradient">safe cutover</span>.</h2>
+      <p class="section-lede reveal">Every migration — from a single service to the full PSM program — moves through the same eight phases.</p>
+
+      <div class="arch-lifecycle reveal-stagger">
+        <div class="arch-phase"><p class="arch-phase__num">01</p><p class="arch-phase__title">Discovery</p><p class="arch-phase__desc">Analyze application architecture, production risk, and migration complexity.</p></div>
+        <div class="arch-phase"><p class="arch-phase__num">02</p><p class="arch-phase__title">Architecture Design</p><p class="arch-phase__desc">Select migration strategy, define topology, design rollback, plan validation.</p></div>
+        <div class="arch-phase"><p class="arch-phase__num">03</p><p class="arch-phase__title">Infrastructure Provisioning</p><p class="arch-phase__desc">Provision migration infrastructure and configure CDC environments.</p></div>
+        <div class="arch-phase"><p class="arch-phase__num">04</p><p class="arch-phase__title">Migration Execution</p><p class="arch-phase__desc">Initial snapshot, CDC synchronization, and continuous data verification.</p></div>
+        <div class="arch-phase"><p class="arch-phase__num">05</p><p class="arch-phase__title">Production Validation</p><p class="arch-phase__desc">Schema, data, application, and performance validation before cutover.</p></div>
+        <div class="arch-phase"><p class="arch-phase__num">06</p><p class="arch-phase__title">Cutover</p><p class="arch-phase__desc">Switch production traffic and verify platform health in real time.</p></div>
+        <div class="arch-phase"><p class="arch-phase__num">07</p><p class="arch-phase__title">Rollback</p><p class="arch-phase__desc">Recover safely if required — protecting business continuity above all.</p></div>
+        <div class="arch-phase"><p class="arch-phase__num">08</p><p class="arch-phase__title">Post-Migration</p><p class="arch-phase__desc">Monitor, review operationally, and capture lessons learned.</p></div>
+      </div>
+
+      <div class="arch-diagram-card reveal">
+        <p class="arch-diagram-card__title">Reference Architecture — CDC-Based PostgreSQL &rarr; MySQL Migration</p>
+        <svg role="img" aria-label="Data flows from PostgreSQL through Debezium and Kafka into MySQL" viewBox="0 0 760 220" style="width:100%;height:auto">
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+              <path d="M0,0 L10,4 L0,8" fill="var(--primary)"></path>
+            </marker>
+          </defs>
+          <g fill="none" stroke="var(--border)" stroke-width="1.5">
+            <rect x="20" y="60" width="150" height="80" rx="14"></rect>
+            <rect x="215" y="60" width="150" height="80" rx="14"></rect>
+            <rect x="410" y="60" width="150" height="80" rx="14"></rect>
+            <rect x="605" y="60" width="135" height="80" rx="14"></rect>
+            <rect x="410" y="160" width="150" height="50" rx="12"></rect>
+          </g>
+          <g font-family="Inter, sans-serif" text-anchor="middle" fill="currentColor">
+            <text x="95" y="94" font-size="15" font-weight="600">PostgreSQL</text>
+            <text x="95" y="114" font-size="12" fill="var(--text-muted)">Source</text>
+            <text x="290" y="94" font-size="15" font-weight="600">Debezium</text>
+            <text x="290" y="114" font-size="12" fill="var(--text-muted)">CDC connector</text>
+            <text x="485" y="94" font-size="15" font-weight="600">Kafka</text>
+            <text x="485" y="114" font-size="12" fill="var(--text-muted)">Event log</text>
+            <text x="672" y="94" font-size="15" font-weight="600">MySQL</text>
+            <text x="672" y="114" font-size="12" fill="var(--text-muted)">Target</text>
+            <text x="485" y="188" font-size="13" font-weight="600">Validation &amp; Rollback</text>
+          </g>
+          <g stroke="var(--primary)" stroke-width="2.5" fill="none" class="cdc-flow-dash">
+            <path d="M170 100 H215" marker-end="url(#arrowhead)"></path>
+            <path d="M365 100 H410" marker-end="url(#arrowhead)"></path>
+            <path d="M560 100 H605" marker-end="url(#arrowhead)"></path>
+            <path d="M485 140 V160" marker-end="url(#arrowhead)"></path>
+          </g>
+        </svg>
+        <p class="hero-card__desc" style="margin-top:16px">Snapshot + change-stream replication with a standardized validation checkpoint before cutover, and a tested rollback path if verification fails.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="experience" aria-labelledby="experience-title">
+    <div class="container">
+      <p class="eyebrow reveal">Professional Experience</p>
+      <h2 class="section-title reveal" id="experience-title">Where the work <span class="text-gradient">actually happened</span>.</h2>
+
+      <div class="reveal">
+        <article class="exp-card">
+          <div class="exp-card__head">
+            <div><p class="exp-card__role">Site Reliability Engineer</p><p class="exp-card__org">ByteDance</p></div>
+            <p class="exp-card__period">Apr 2025 &ndash; Present &middot; Jakarta, Indonesia</p>
+          </div>
+          <p class="exp-card__mission">As part of the Database SRE organization, I design and build automation platforms that improve the reliability, scalability, and operational efficiency of large-scale database infrastructure across ByteDance.</p>
+          <ul>
+            <li>Tech Lead for Tokopedia's PostgreSQL-to-MySQL migration program following the ByteDance acquisition — co-designing migration architecture, engineering standards, automation ecosystem, and operational governance.</li>
+            <li>Designed heterogeneous migration architecture covering PostgreSQL, MySQL, Debezium, Kafka, CDC, rollback strategy, data type conversion, validation, and production cutover.</li>
+            <li>Built end-to-end automation for provisioning, migration validation, rollback, monitoring, and operational workflows.</li>
+            <li>Collaborated with Technical Architects on infrastructure topology, Terraform provisioning, Ansible deployment, and cost optimization.</li>
+            <li>Served as a technical approver during Infrastructure Go/No-Go decisions for production migration; mentored engineers and reviewed infrastructure pull requests.</li>
+            <li>Supported operation and reliability of ~408 production database clusters (PostgreSQL, MySQL, YugabyteDB).</li>
+          </ul>
+          <div class="tech-row"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">Debezium</span><span class="chip">Kafka</span><span class="chip">Go</span><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">SQL</span></div>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-card__head">
+            <div><p class="exp-card__role">Senior Database Administrator</p><p class="exp-card__org">Tokopedia</p></div>
+            <p class="exp-card__period">Dec 2018 &ndash; Present &middot; Greater Jakarta Area</p>
+          </div>
+          <p class="exp-card__mission">Responsible for database platform reliability, migration engineering, and operational excellence supporting mission-critical production services.</p>
+          <ul>
+            <li>Led multiple large-scale migration initiatives: Aliyun-to-GCP, PostgreSQL upgrades, YugabyteDB migration, and piloting ByteCloud migration.</li>
+            <li>Collaborated with ByteDance engineering teams during the post-acquisition technology transition — evaluating platforms, running proofs-of-concept, and shaping the PostgreSQL-to-MySQL migration strategy.</li>
+            <li>Designed monitoring standards, alerting improvements, replication strategies, and backup automation across production databases.</li>
+            <li>Delivered PCI DSS compliance initiatives by collaborating with auditors and engineering teams.</li>
+            <li>Built operational automation for provisioning, health checks, backup validation, and migration workflows.</li>
+            <li>Owned incident response, root cause analysis, and performance / replication tuning across the fleet.</li>
+          </ul>
+          <div class="tech-row"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">Debezium</span><span class="chip">Kafka</span><span class="chip">Go</span><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">SQL</span></div>
+        </article>
+
+        <article class="exp-card exp-card--compact">
+          <div class="exp-card__head">
+            <div><p class="exp-card__role">Core Engineer</p><p class="exp-card__org">Digiasia Bios</p></div>
+            <p class="exp-card__period">Feb 2018 &ndash; Dec 2018</p>
+          </div>
+          <p class="exp-card__mission" style="margin-block:8px 0">Designed and maintained backend infrastructure supporting fintech services, developing automation and database solutions for internal platforms.</p>
+        </article>
+
+        <article class="exp-card exp-card--compact">
+          <div class="exp-card__head">
+            <div><p class="exp-card__role">Java Developer &rarr; Backend Developer &rarr; Financial Reporting &amp; Database</p><p class="exp-card__org">PT. Witami Tunai Mandiri</p></div>
+            <p class="exp-card__period">Nov 2015 &ndash; Jan 2018</p>
+          </div>
+          <ul style="margin-top:12px">
+            <li>Built reporting data pipelines and set up bi-directional replication for PostgreSQL (Postgres-BDR).</li>
+            <li>Created internal APIs with Python-Flask and an EDW using Python-Pandas.</li>
+            <li>Developed batch reporting programs and supported financial fraud investigations.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card exp-card--compact">
+          <div class="exp-card__head">
+            <div><p class="exp-card__role">Full Stack Developer</p><p class="exp-card__org">PT. CNAIndo Teknologi</p></div>
+            <p class="exp-card__period">Oct 2014 &ndash; Nov 2015</p>
+          </div>
+          <p class="exp-card__mission" style="margin-block:8px 0">Developed enterprise software for financial institutions and securities companies — including a brokerage office system for NH Korindo Securities and the BEST online trading platform for BCA Sekuritas — using Oracle, C, Python, PHP, Java, and MySQL.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="leadership" aria-labelledby="leadership-title">
+    <div class="container">
+      <p class="eyebrow reveal">Technical Leadership</p>
+      <h2 class="section-title reveal" id="leadership-title">Leadership through <span class="text-gradient">ownership</span>, not hierarchy.</h2>
+      <p class="section-lede reveal">Technical leadership on the PSM migration program, expressed across six areas of ownership.</p>
+
+      <div class="leadership-grid reveal-stagger">
+        <article class="leadership-card">
+          <div class="leadership-card__icon" aria-hidden="true">◆</div>
+          <p class="leadership-card__title">Architecture Ownership</p>
+          <p class="leadership-card__desc">Co-designed the migration architecture for Tokopedia's PostgreSQL-to-MySQL program as Technical Lead, working directly with Technical Architects on topology and provisioning strategy.</p>
+        </article>
+        <article class="leadership-card">
+          <div class="leadership-card__icon" aria-hidden="true">§</div>
+          <p class="leadership-card__title">Engineering Standards</p>
+          <p class="leadership-card__desc">Established migration SOPs, validation standards, and rollback procedures adopted across the migration team.</p>
+        </article>
+        <article class="leadership-card">
+          <div class="leadership-card__icon" aria-hidden="true">◐</div>
+          <p class="leadership-card__title">Technical Mentoring</p>
+          <p class="leadership-card__desc">Mentored engineers, reviewed infrastructure pull requests, and assigned technical work across the migration effort.</p>
+        </article>
+        <article class="leadership-card">
+          <div class="leadership-card__icon" aria-hidden="true">✓</div>
+          <p class="leadership-card__title">Governance &amp; Go/No-Go</p>
+          <p class="leadership-card__desc">Served as a technical approver for production migration Go/No-Go decisions, weighing risk against schedule for 40TB+ cutovers.</p>
+        </article>
+        <article class="leadership-card">
+          <div class="leadership-card__icon" aria-hidden="true">⇄</div>
+          <p class="leadership-card__title">Cross-functional Collaboration</p>
+          <p class="leadership-card__desc">Partnered with Technical Architects on Terraform provisioning and Ansible deployment, and with ByteDance teams during post-acquisition platform evaluation.</p>
+        </article>
+        <article class="leadership-card">
+          <div class="leadership-card__icon" aria-hidden="true">▣</div>
+          <p class="leadership-card__title">Platform Enablement</p>
+          <p class="leadership-card__desc">Built reusable automation for provisioning, validation, and rollback that the wider migration team now runs independently.</p>
+        </article>
+      </div>
+
+      <blockquote class="quote-block reveal">
+        "Technical leadership is not measured by the number of people reporting to you. It is measured by how many engineers become more effective because of the platforms, standards, and architectural decisions you create."
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="stack" aria-labelledby="stack-title">
+    <div class="container">
+      <p class="eyebrow reveal">Technology Ecosystem</p>
+      <h2 class="section-title reveal" id="stack-title">Tools in service of the <span class="text-gradient">platform</span>.</h2>
+
+      <div class="stack-grid reveal-stagger">
+        <article class="stack-card">
+          <p class="stack-card__title">Production Databases</p>
+          <p class="stack-card__purpose">Reliable, highly available production data services.</p>
+          <div class="tech-row"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">YugabyteDB</span><span class="chip">CloudSQL</span><span class="chip">ByteCloud</span><span class="chip">ByteNDB</span></div>
+        </article>
+        <article class="stack-card">
+          <p class="stack-card__title">Migration &amp; Streaming</p>
+          <p class="stack-card__purpose">Change data capture for safe, low-downtime migrations.</p>
+          <div class="tech-row"><span class="chip">Debezium</span><span class="chip">Kafka</span><span class="chip">CDC</span></div>
+        </article>
+        <article class="stack-card">
+          <p class="stack-card__title">Automation &amp; Languages</p>
+          <p class="stack-card__purpose">Provisioning, validation, and rollback tooling.</p>
+          <div class="tech-row"><span class="chip">Go</span><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">SQL</span></div>
+        </article>
+        <article class="stack-card">
+          <p class="stack-card__title">Infrastructure</p>
+          <p class="stack-card__purpose">Stable, repeatable environments for production workloads.</p>
+          <div class="tech-row"><span class="chip">Terraform</span><span class="chip">Ansible</span><span class="chip">Docker</span><span class="chip">Linux</span></div>
+        </article>
+        <article class="stack-card">
+          <p class="stack-card__title">Engineering Workflow</p>
+          <p class="stack-card__purpose">Collaboration, review, and knowledge sharing.</p>
+          <div class="tech-row"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Pull Requests</span><span class="chip">Documentation</span></div>
+        </article>
+        <article class="stack-card">
+          <p class="stack-card__title">Top Skills</p>
+          <p class="stack-card__purpose">As reflected on LinkedIn.</p>
+          <div class="tech-row"><span class="chip">Server Architecture</span><span class="chip">SQL DBA</span><span class="chip">GCP Data Engineer</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="certifications" aria-labelledby="certifications-title">
+    <div class="container">
+      <p class="eyebrow reveal">Certifications &amp; Education</p>
+      <h2 class="section-title reveal" id="certifications-title">Continuous <span class="text-gradient">learning</span>.</h2>
+
+      <div class="cert-grid reveal-stagger">
+        <article class="cert-card">
+          <p class="cert-card__title">GCP: Complete Google Data Engineer and Cloud Architect Guide</p>
+          <p class="cert-card__issuer">Udemy &middot; Issued Jul 2025 &middot; Credential UC-070feefb-64ec-471d-bd4f-da649ebd21fc</p>
+          <a class="cert-card__link" href="https://www.udemy.com/certificate/UC-070feefb-64ec-471d-bd4f-da649ebd21fc/" target="_blank" rel="noopener noreferrer">View credential &rarr;</a>
+        </article>
+        <article class="cert-card">
+          <p class="cert-card__title">SQL (Advanced) Certificate</p>
+          <p class="cert-card__issuer">HackerRank &middot; Issued Jul 2025 &middot; Credential 161ae3bf8c2f</p>
+          <a class="cert-card__link" href="https://www.hackerrank.com/certificates/161ae3bf8c2f" target="_blank" rel="noopener noreferrer">View credential &rarr;</a>
+        </article>
+        <article class="cert-card">
+          <p class="cert-card__title">SQL (Intermediate) Certificate</p>
+          <p class="cert-card__issuer">HackerRank &middot; Issued Jul 2025 &middot; Credential eba731858833</p>
+          <a class="cert-card__link" href="https://www.hackerrank.com/certificates/eba731858833" target="_blank" rel="noopener noreferrer">View credential &rarr;</a>
+        </article>
+      </div>
+
+      <div class="hero-card reveal" style="margin-top:24px">
+        <p class="hero-card__label">Education</p>
+        <p style="font-family:var(--font-heading);font-weight:600;font-size:18px;margin-top:6px">Universitas Gunadarma</p>
+        <p class="hero-card__desc">Sarjana Teknik, Teknik Informatika (Bachelor of Engineering, Informatics Engineering) &middot; 2010 &ndash; 2014</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <p class="eyebrow reveal">Open to Engineering Conversations</p>
+      <h2 class="section-title reveal" id="contact-title">Let's talk about <span class="text-gradient">reliable systems</span>.</h2>
+      <p class="section-lede reveal">Great engineering is built through collaboration. Whether you're designing large-scale platforms, planning a database migration, or hiring for reliability engineering — I'd like to hear from you.</p>
+
+      <div class="contact-wrap reveal">
+        <div class="contact-topics">
+          <div class="contact-topic"><span aria-hidden="true">▸</span><div><p class="contact-topic__title">Database Platform Engineering</p><p class="contact-topic__desc">Designing reliable production database platforms.</p></div></div>
+          <div class="contact-topic"><span aria-hidden="true">▸</span><div><p class="contact-topic__title">Migration Architecture</p><p class="contact-topic__desc">Large-scale PostgreSQL and MySQL migration strategy.</p></div></div>
+          <div class="contact-topic"><span aria-hidden="true">▸</span><div><p class="contact-topic__title">Reliability Engineering</p><p class="contact-topic__desc">Observability, automation, and operational excellence.</p></div></div>
+          <div class="contact-topic"><span aria-hidden="true">▸</span><div><p class="contact-topic__title">Engineering Career Conversations</p><p class="contact-topic__desc">Staff Engineer, Principal Engineer, Solutions Architect, and Engineering Leadership roles.</p></div></div>
+        </div>
+
+        <div class="contact-card">
+          <a class="contact-channel contact-channel__link" href="mailto:enggar.ranu@gmail.com">
+            <span class="contact-channel__label">Email</span><span class="contact-channel__value">enggar.ranu@gmail.com</span>
+          </a>
+          <a class="contact-channel contact-channel__link" href="https://www.linkedin.com/in/enggarranu" target="_blank" rel="noopener noreferrer">
+            <span class="contact-channel__label">LinkedIn</span><span class="contact-channel__value">/in/enggarranu</span>
+          </a>
+          <a class="contact-channel contact-channel__link" href="https://github.com/enggarranu" target="_blank" rel="noopener noreferrer">
+            <span class="contact-channel__label">GitHub</span><span class="contact-channel__value">/enggarranu</span>
+          </a>
+          <div class="contact-channel">
+            <span class="contact-channel__label">Location</span><span class="contact-channel__value">Jakarta, Indonesia</span>
+          </div>
+          <div style="margin-top:var(--space-6)">
+            <a class="btn btn--primary" href="https://www.linkedin.com/in/enggarranu" target="_blank" rel="noopener noreferrer" style="width:100%">Connect on LinkedIn</a>
+          </div>
+          <div class="availability-list">
+            <span class="chip">Staff Engineer</span><span class="chip">Principal Engineer</span><span class="chip">Solutions Architect</span><span class="chip">Engineering Leadership</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand__name">Enggar Ranu Hariawan</p>
+        <p class="footer-brand__roles">Site Reliability Engineer<br>Database Platform Engineer<br>Migration Architect</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Navigate</p>
+        <a href="#impact">Impact</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#leadership">Leadership</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col__title">Connect</p>
+        <a href="mailto:enggar.ranu@gmail.com">enggar.ranu@gmail.com</a>
+        <a href="https://www.linkedin.com/in/enggarranu" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/enggarranu" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Enggar Ranu Hariawan. Built with HTML, CSS &amp; JavaScript &middot; deployed on GitHub Pages.</span>
+      <a class="back-to-top" href="#top">Back to top &uarr;</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
