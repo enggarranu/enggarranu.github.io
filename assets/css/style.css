@@ -234,6 +234,16 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .hero-card__desc { color: var(--text-secondary); font-size: 14px; margin-top: 4px; }
 .hero-metrics-mini { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
 .hero-metrics-mini .hero-card__value { font-size: 24px; }
+.hero-card--highlight {
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+  background:
+    radial-gradient(220px circle at 100% 0%, color-mix(in srgb, var(--primary) 14%, transparent), transparent 70%),
+    var(--card);
+}
+.hero-card--highlight .hero-card__value {
+  background: linear-gradient(120deg, var(--primary) 0%, var(--success) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
 
 .scroll-cue {
   position: absolute; bottom: var(--space-8); left: 50%; transform: translateX(-50%);
@@ -258,24 +268,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .metric-card__value { font-family: var(--font-heading); font-size: 30px; font-weight: 700; color: var(--primary); }
 .metric-card__title { font-weight: 600; margin-top: var(--space-2); margin-bottom: var(--space-2); }
 .metric-card__desc { font-size: 14px; color: var(--text-secondary); }
-
-/* ---------- Timeline (Journey) ---------- */
-.timeline { position: relative; max-width: 760px; }
-.timeline::before {
-  content: ''; position: absolute; left: 19px; top: 8px; bottom: 8px; width: 2px;
-  background: linear-gradient(var(--border), var(--border));
-}
-.timeline-item { position: relative; padding-left: var(--space-12); padding-bottom: var(--space-10); }
-.timeline-item:last-child { padding-bottom: 0; }
-.timeline-item__dot {
-  position: absolute; left: 11px; top: 4px; width: 18px; height: 18px; border-radius: 50%;
-  background: var(--bg); border: 3px solid var(--text-muted); z-index: 1; transition: border-color 0.3s ease, background 0.3s ease;
-}
-.timeline-item.is-current .timeline-item__dot { border-color: var(--primary); background: var(--primary-soft); box-shadow: 0 0 0 4px var(--primary-soft); }
-.timeline-item__meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
-.timeline-item__title { font-family: var(--font-heading); font-size: 20px; font-weight: 600; margin-bottom: 6px; }
-.timeline-item__org { color: var(--primary); font-weight: 500; font-size: 14px; margin-bottom: var(--space-3); }
-.timeline-item__desc { color: var(--text-secondary); font-size: 15px; max-width: 600px; }
 
 /* ---------- Principles ---------- */
 .principle-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
@@ -342,22 +334,99 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .cdc-flow-dash { stroke-dasharray: 6 6; animation: dash 20s linear infinite; }
 @keyframes dash { to { stroke-dashoffset: -400; } }
 
-/* ---------- Experience ---------- */
+/* ---------- Experience (career timeline + role cards) ---------- */
+.exp-banner {
+  display: flex; align-items: center; gap: var(--space-10);
+  background:
+    radial-gradient(480px circle at 0% 0%, color-mix(in srgb, var(--primary) 14%, transparent), transparent 65%),
+    radial-gradient(480px circle at 100% 100%, color-mix(in srgb, var(--success) 10%, transparent), transparent 65%),
+    var(--card);
+  border: 1px solid color-mix(in srgb, var(--primary) 32%, var(--border));
+  border-radius: var(--radius-lg); padding: var(--space-8);
+  margin-bottom: var(--space-12); box-shadow: var(--shadow-2);
+}
+.exp-banner__years { display: flex; align-items: center; gap: var(--space-4); flex-shrink: 0; }
+.exp-banner__value {
+  font-family: var(--font-heading); font-size: clamp(56px, 7vw, 80px); font-weight: 700; line-height: 1;
+  background: linear-gradient(120deg, var(--primary) 0%, var(--success) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.exp-banner__label { font-family: var(--font-heading); font-weight: 600; font-size: 17px; line-height: 1.35; }
+.exp-banner__divider { align-self: stretch; width: 1px; background: var(--border); }
+.exp-banner__facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); flex: 1; }
+.exp-banner__fact-value { font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--text); }
+.exp-banner__fact-label { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+@media (max-width: 900px) {
+  .exp-banner { flex-direction: column; align-items: flex-start; gap: var(--space-6); }
+  .exp-banner__divider { width: 100%; height: 1px; align-self: auto; }
+  .exp-banner__facts { width: 100%; }
+}
+@media (max-width: 600px) { .exp-banner__facts { grid-template-columns: 1fr; gap: var(--space-4); } }
+
+.exp-timeline { position: relative; padding-left: var(--space-12); }
+.exp-timeline::before {
+  content: ''; position: absolute; left: 11px; top: 12px; bottom: 12px; width: 2px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--success) 45%, var(--border) 100%);
+}
+.exp-timeline__dot {
+  position: absolute; left: calc(-1 * var(--space-12) + 3px); top: 38px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--bg-elevated); border: 3px solid var(--text-muted); z-index: 1;
+}
+.exp-timeline__dot--current {
+  border-color: var(--success); background: var(--success-soft);
+  animation: dot-pulse 2.4s ease-out infinite;
+}
+@keyframes dot-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--success) 40%, transparent); }
+  70% { box-shadow: 0 0 0 9px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
 .exp-card {
+  position: relative;
   border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-8);
   background: var(--card); margin-bottom: var(--space-6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
+.exp-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-2); border-color: color-mix(in srgb, var(--primary) 40%, var(--border)); }
 .exp-card:last-child { margin-bottom: 0; }
+.exp-card--current { border-color: color-mix(in srgb, var(--success) 35%, var(--border)); }
 .exp-card__head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-2); }
 .exp-card__role { font-size: 20px; font-family: var(--font-heading); font-weight: 600; }
+.exp-card__tag { font-size: 11px; vertical-align: middle; margin-left: var(--space-2); }
 .exp-card__org { color: var(--primary); font-weight: 500; }
+.exp-card__when { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
 .exp-card__period { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); white-space: nowrap; }
+.exp-card__duration {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--primary);
+  background: var(--primary-soft); border-radius: var(--radius-pill); padding: 2px 12px;
+}
+.badge-current {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--success); background: var(--success-soft);
+  border: 1px solid color-mix(in srgb, var(--success) 35%, var(--border));
+  border-radius: var(--radius-pill); padding: 3px 12px;
+}
+.badge-current::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--success);
+  animation: dot-pulse 2.4s ease-out infinite;
+}
 .exp-card__mission { color: var(--text-secondary); font-size: 15px; margin-block: var(--space-4); max-width: 680px; }
 .exp-card ul { display: grid; gap: var(--space-2); margin-bottom: var(--space-4); }
 .exp-card li { display: flex; gap: var(--space-2); font-size: 14.5px; color: var(--text-secondary); }
 .exp-card li::before { content: '▸'; color: var(--primary); flex-shrink: 0; }
 .exp-card--compact { padding: var(--space-6); }
 .exp-card--compact .exp-card__role { font-size: 17px; }
+.exp-card--compact ul { margin-bottom: 0; }
+
+@media (max-width: 600px) {
+  .exp-timeline { padding-left: var(--space-8); }
+  .exp-timeline::before { left: 6px; }
+  .exp-timeline__dot { left: calc(-1 * var(--space-8) - 1px); top: 32px; width: 14px; height: 14px; }
+  .exp-card__when { flex-direction: row; flex-wrap: wrap; align-items: center; }
+}
 
 /* ---------- Leadership ---------- */
 .leadership-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
