@@ -93,6 +93,14 @@
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  /* ---------------- Dynamic years of experience ---------------- */
+  document.querySelectorAll('[data-years-since]').forEach(function (el) {
+    var parts = el.getAttribute('data-years-since').split('-');
+    var start = new Date(parseInt(parts[0], 10), (parseInt(parts[1], 10) || 1) - 1, 1);
+    var years = Math.floor((Date.now() - start.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
+    if (years > 0) el.setAttribute('data-count', String(years));
+  });
+
   /* ---------------- Count-up metrics ---------------- */
   var counters = document.querySelectorAll('[data-count]');
 
