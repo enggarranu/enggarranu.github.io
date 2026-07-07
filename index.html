@@ -40,7 +40,7 @@
   "worksFor": { "@type": "Organization", "name": "ByteDance" },
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universitas Gunadarma" },
   "address": { "@type": "PostalAddress", "addressRegion": "DKI Jakarta", "addressCountry": "ID" },
-  "knowsAbout": ["Site Reliability Engineering", "Database Migration", "PostgreSQL", "MySQL", "Change Data Capture", "Debezium", "Kafka", "Infrastructure Automation", "Platform Engineering"],
+  "knowsAbout": ["Site Reliability Engineering", "Database Migration", "PostgreSQL", "MySQL", "Change Data Capture", "Debezium", "Kafka", "Infrastructure Automation", "Platform Engineering", "High Availability", "Database Replication", "Backup and Restore", "Disaster Recovery", "Query Optimization"],
   "sameAs": [
     "https://www.linkedin.com/in/enggarranu",
     "https://github.com/enggarranu"
@@ -282,12 +282,15 @@
           <ul>
             <li>Led multiple large-scale migration initiatives: Aliyun-to-GCP, PostgreSQL upgrades, YugabyteDB migration, and piloting ByteCloud migration.</li>
             <li>Collaborated with ByteDance engineering teams during the post-acquisition technology transition — evaluating platforms, running proofs-of-concept, and shaping the PostgreSQL-to-MySQL migration strategy.</li>
-            <li>Designed monitoring standards, alerting improvements, replication strategies, and backup automation across production databases.</li>
+            <li>Designed high availability (HA) and replication architecture — keeping synchronized copies of data across multiple servers, so services stay online even when hardware fails.</li>
+            <li>Owned backup and restore strategy across the fleet — automated backups, integrity validation, and regularly tested restore drills, so business-critical data is always recoverable.</li>
+            <li>Maintained Disaster Recovery Center (DRC) readiness — standby infrastructure and failover procedures that keep the platform running even through a full data-center outage.</li>
+            <li>Performed query optimization and database performance tuning — turning slow queries into fast ones, so customer-facing services stay responsive during peak traffic events.</li>
+            <li>Designed monitoring standards, alerting improvements, and operational automation for provisioning, health checks, and migration workflows.</li>
             <li>Delivered PCI DSS compliance initiatives by collaborating with auditors and engineering teams.</li>
-            <li>Built operational automation for provisioning, health checks, backup validation, and migration workflows.</li>
-            <li>Owned incident response, root cause analysis, and performance / replication tuning across the fleet.</li>
+            <li>Owned incident response and root cause analysis across the fleet.</li>
           </ul>
-          <div class="tech-row"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">PgBouncer</span><span class="chip">WAL-G</span><span class="chip">Debezium</span><span class="chip">Kafka</span><span class="chip">Go</span><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">SQL</span></div>
+          <div class="tech-row"><span class="chip chip--accent">High Availability</span><span class="chip chip--accent">Replication</span><span class="chip chip--accent">Backup &amp; Restore</span><span class="chip chip--accent">Disaster Recovery (DRC)</span><span class="chip chip--accent">Query Optimization</span><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">PgBouncer</span><span class="chip">WAL-G</span><span class="chip">Debezium</span><span class="chip">Kafka</span><span class="chip">Go</span><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">SQL</span></div>
         </article>
 
         <article class="exp-card exp-card--compact reveal">
