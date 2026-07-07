@@ -499,6 +499,26 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
 
+/* ---------- 3D Tilt & Depth Parallax ----------
+   html.has-tilt is added by JS only on hover-capable, fine-pointer
+   devices with motion allowed — touch devices never pay this cost.
+   JS drives the card's rotateX/rotateY inline; these rules provide the
+   3D context and float key elements forward on the Z axis. */
+html.has-tilt .metric-card,
+html.has-tilt .exp-card,
+html.has-tilt .hero-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+html.has-tilt .metric-card:hover,
+html.has-tilt .exp-card:hover { transform: none; } /* JS owns the hover transform */
+html.has-tilt .metric-card__value,
+html.has-tilt .hero-card__value { transform: translateZ(30px); }
+html.has-tilt .metric-card__title { transform: translateZ(16px); }
+html.has-tilt .exp-card__role { transform: translateZ(22px); }
+html.has-tilt .exp-card__duration,
+html.has-tilt .badge-current { transform: translateZ(26px); }
+
 /* ---------- Reveal Animations ---------- */
 /* When GSAP ScrollTrigger drives the entrance animations (html.has-gsap),
    the CSS-transition fallback below is disabled so the two never conflict. */
