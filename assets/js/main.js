@@ -20,7 +20,7 @@
 
   var storedTheme = null;
   try { storedTheme = localStorage.getItem('theme'); } catch (e) {}
-  var initialTheme = storedTheme || 'dark';
+  var initialTheme = storedTheme || 'light';
   applyTheme(initialTheme);
 
   if (themeToggle) {
