@@ -87,6 +87,7 @@
 
 <header class="hero" id="top">
   <div class="hero__glow" aria-hidden="true"></div>
+  <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
   <div class="container">
     <div class="hero__grid">
       <div class="reveal">
@@ -758,5 +759,8 @@
 <script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/vendor/lenis.min.js"></script>
 <script src="assets/js/main.js"></script>
+<!-- WebGL hero background — a module script never blocks rendering, and
+     browsers without module support simply skip it (progressive enhancement) -->
+<script type="module" src="assets/js/hero-scene.js"></script>
 </body>
 </html>
