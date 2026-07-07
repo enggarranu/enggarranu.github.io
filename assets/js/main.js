@@ -173,6 +173,69 @@
     revealEls.forEach(function (el) { revealObserver.observe(el); });
   }
 
+  /* ---------------- 3D tilt & depth parallax ----------------
+     Pointer-driven rotateX/rotateY around each card's center, written
+     at most once per frame via requestAnimationFrame. Only activates on
+     hover-capable fine-pointer devices (never on touch screens) and
+     respects prefers-reduced-motion. Depth comes from translateZ on the
+     card's key elements (see html.has-tilt rules in the CSS). */
+  var supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  function initTilt(selector, options) {
+    var settings = Object.assign({ maxTilt: 8, lift: -4, scale: 1.02 }, options);
+    var idleTransition = 'transform 0s, box-shadow 0.25s ease, border-color 0.25s ease';
+    var settleTransition = 'transform 0.5s cubic-bezier(.16,1,.3,1), box-shadow 0.25s ease, border-color 0.25s ease';
+
+    document.querySelectorAll(selector).forEach(function (card) {
+      var rect = null;
+      var frame = null;
+      var settleTimer = null;
+      var nx = 0.5;
+      var ny = 0.5;
+
+      function render() {
+        frame = null;
+        if (!rect) return;
+        var rx = (0.5 - ny) * settings.maxTilt;
+        var ry = (nx - 0.5) * settings.maxTilt;
+        card.style.transform =
+          'perspective(900px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)' +
+          ' translateY(' + settings.lift + 'px) scale(' + settings.scale + ')';
+      }
+
+      card.addEventListener('pointerenter', function (event) {
+        if (event.pointerType && event.pointerType !== 'mouse') return;
+        rect = card.getBoundingClientRect();
+        clearTimeout(settleTimer);
+        /* Ease into the first pose, then hand over to 1:1 rAF tracking. */
+        card.style.transition = settleTransition;
+        settleTimer = setTimeout(function () { card.style.transition = idleTransition; }, 500);
+      });
+
+      card.addEventListener('pointermove', function (event) {
+        if (!rect) return;
+        nx = (event.clientX - rect.left) / rect.width;
+        ny = (event.clientY - rect.top) / rect.height;
+        if (frame === null) frame = window.requestAnimationFrame(render);
+      });
+
+      card.addEventListener('pointerleave', function () {
+        rect = null;
+        if (frame !== null) { window.cancelAnimationFrame(frame); frame = null; }
+        clearTimeout(settleTimer);
+        card.style.transition = settleTransition;
+        card.style.transform = '';
+        settleTimer = setTimeout(function () { card.style.transition = ''; }, 520);
+      });
+    });
+  }
+
+  if (supportsHover && !prefersReducedMotion) {
+    root.classList.add('has-tilt');
+    initTilt('.metric-card, .hero-card', { maxTilt: 8, lift: -4, scale: 1.02 });
+    initTilt('.exp-card', { maxTilt: 3.5, lift: -3, scale: 1.005 });
+  }
+
   /* ---------------- Dynamic years of experience ---------------- */
   document.querySelectorAll('[data-years-since]').forEach(function (el) {
     var parts = el.getAttribute('data-years-since').split('-');
