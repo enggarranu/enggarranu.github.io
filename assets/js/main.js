@@ -136,34 +136,33 @@
   var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
 
   if (useGsap) {
-    /* GSAP path: fade-up with a subtle 3D tilt. The has-gsap class
-       neutralizes the CSS-transition reveal so the two never fight. */
+    /* GSAP path: a clean, compositor-friendly fade-up. Only opacity and
+       translateY are animated — no perspective or 3D rotation, which
+       rasterize large card layers and stutter on mobile GPUs. Mobile
+       gets a shorter travel distance and duration so content settles
+       quickly while scrolling. The has-gsap class neutralizes the
+       CSS-transition reveal so the two never fight. */
     root.classList.add('has-gsap');
 
-    var revealFrom = {
-      opacity: 0,
-      y: 48,
-      rotationX: -8,
-      transformPerspective: 900,
-      transformOrigin: '50% 100%'
-    };
+    var smallScreen = window.matchMedia('(max-width: 767px)').matches;
+    var revealFrom = { opacity: 0, y: smallScreen ? 18 : 32 };
 
     window.gsap.utils.toArray('.reveal').forEach(function (el) {
       window.gsap.from(el, Object.assign({}, revealFrom, {
-        duration: 1,
-        ease: 'power3.out',
+        duration: smallScreen ? 0.55 : 0.85,
+        ease: 'power2.out',
         clearProps: 'all',
-        scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+        scrollTrigger: { trigger: el, start: 'top 90%', once: true }
       }));
     });
 
     window.gsap.utils.toArray('.reveal-stagger').forEach(function (group) {
       window.gsap.from(group.children, Object.assign({}, revealFrom, {
-        duration: 0.9,
-        ease: 'power3.out',
-        stagger: 0.08,
+        duration: smallScreen ? 0.5 : 0.75,
+        ease: 'power2.out',
+        stagger: smallScreen ? 0.05 : 0.07,
         clearProps: 'all',
-        scrollTrigger: { trigger: group, start: 'top 85%', once: true }
+        scrollTrigger: { trigger: group, start: 'top 88%', once: true }
       }));
     });
   } else if (prefersReducedMotion || !('IntersectionObserver' in window)) {
