@@ -105,10 +105,17 @@
   var navLinks = document.querySelectorAll('.nav__link');
   var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id], header[id]'));
 
+  var progressBar = document.getElementById('scroll-progress');
+
   function onScroll() {
     if (nav) nav.classList.toggle('scrolled', window.scrollY > 24);
+    if (progressBar) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (max > 0 ? Math.min(window.scrollY / max, 1) : 0) + ')';
+    }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
   onScroll();
 
   if (sections.length && navLinks.length) {
@@ -310,6 +317,125 @@
     } else {
       counters.forEach(animateCounter);
     }
+  }
+
+  /* ---------------- Haptic feedback ----------------
+     A barely-there tap on interactive elements. Only Android browsers
+     implement navigator.vibrate — iOS silently ignores the call. */
+  if ('vibrate' in navigator && !prefersReducedMotion) {
+    document.addEventListener('pointerdown', function (event) {
+      if (event.pointerType !== 'touch') return;
+      var interactive = event.target.closest(
+        '.btn, .nav__link, .nav__toggle-btn, .nav__brand, .mobile-menu a, ' +
+        '.metric-card, .exp-card, .project-card, .award-card, .cert-card__link, .contact-channel__link'
+      );
+      if (interactive) {
+        try { navigator.vibrate(8); } catch (e) {}
+      }
+    }, { passive: true });
+  }
+
+  /* ---------------- Easter egg: tap the ER logo 5x ---------------- */
+  var brand = document.querySelector('.nav__brand');
+  var tapCount = 0;
+  var tapTimer = null;
+  var celebrating = false;
+
+  if (brand) {
+    brand.addEventListener('click', function () {
+      tapCount += 1;
+      clearTimeout(tapTimer);
+      tapTimer = setTimeout(function () { tapCount = 0; }, 700);
+      if (tapCount >= 5) {
+        tapCount = 0;
+        celebrate();
+      }
+    });
+  }
+
+  function celebrate() {
+    if (celebrating) return;
+    celebrating = true;
+    showToast('Thanks for visiting! 🎉');
+    if (!prefersReducedMotion) {
+      launchConfetti();
+      if ('vibrate' in navigator) { try { navigator.vibrate([12, 40, 12]); } catch (e) {} }
+    }
+    setTimeout(function () { celebrating = false; }, 3200);
+  }
+
+  function showToast(message) {
+    var toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.setAttribute('role', 'status');
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    window.requestAnimationFrame(function () { toast.classList.add('toast--visible'); });
+    setTimeout(function () {
+      toast.classList.remove('toast--visible');
+      setTimeout(function () { toast.remove(); }, 400);
+    }, 2600);
+  }
+
+  function launchConfetti() {
+    var canvas = document.createElement('canvas');
+    canvas.className = 'confetti-canvas';
+    canvas.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(canvas);
+
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    var ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+
+    var colors = ['#3B82F6', '#10B981', '#60A5FA', '#34D399', '#F59E0B'];
+    var pieces = [];
+    for (var i = 0; i < 140; i++) {
+      pieces.push({
+        x: Math.random() * width,
+        y: -20 - Math.random() * height * 0.25,
+        vx: (Math.random() - 0.5) * 1.6,
+        vy: 2 + Math.random() * 3,
+        w: 5 + Math.random() * 6,
+        h: 8 + Math.random() * 6,
+        rot: Math.random() * Math.PI,
+        vr: (Math.random() - 0.5) * 0.2,
+        color: colors[i % colors.length]
+      });
+    }
+
+    var DURATION = 2600;
+    var start = null;
+
+    function tick(now) {
+      if (start === null) start = now;
+      var elapsed = now - start;
+      ctx.clearRect(0, 0, width, height);
+      var alpha = Math.max(0, 1 - Math.max(0, elapsed - DURATION * 0.6) / (DURATION * 0.4));
+      for (var i = 0; i < pieces.length; i++) {
+        var p = pieces[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.045;
+        p.rot += p.vr;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      }
+      if (elapsed < DURATION) {
+        window.requestAnimationFrame(tick);
+      } else {
+        canvas.remove();
+      }
+    }
+    window.requestAnimationFrame(tick);
   }
 
   /* ---------------- Footer year ---------------- */
