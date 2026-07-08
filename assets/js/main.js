@@ -75,7 +75,16 @@
       var target = document.getElementById(hash.slice(1));
       if (!target) return;
       event.preventDefault();
-      lenis.scrollTo(target, { offset: hash === '#top' ? 0 : -76, duration: 1.3 });
+      /* If this link lives in the mobile menu, close it and resume Lenis
+         first. The menu-open state stops Lenis, which would otherwise
+         make scrollTo a silent no-op (only the URL would change). */
+      if (mobileMenu && mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
+        if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        lenis.start();
+      }
+      lenis.scrollTo(target, { offset: hash === '#top' ? 0 : -76, duration: 1.3, force: true });
       if (window.history && window.history.pushState) window.history.pushState(null, '', hash);
     });
   });
