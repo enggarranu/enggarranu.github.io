@@ -463,6 +463,24 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .stack-card__purpose { font-size: 13px; color: var(--text-secondary); margin-bottom: var(--space-4); }
 .stack-card .tech-row { margin: 0; }
 
+/* ---------- Awards & Recognition ---------- */
+.award-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+@media (max-width: 900px) { .award-grid { grid-template-columns: 1fr; } }
+.award-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  overflow: hidden; display: flex; flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.award-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: color-mix(in srgb, var(--primary) 40%, var(--border)); }
+.award-card__media { display: block; aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--border); }
+.award-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.award-card__media:hover img { transform: scale(1.03); }
+.award-card__body { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2); }
+.award-card__head { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-3); }
+.award-card__title { font-size: 18px; }
+.award-card__issuer { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--text-muted); text-transform: uppercase; }
+.award-card__desc { font-size: 14px; color: var(--text-secondary); }
+
 /* ---------- Certifications ---------- */
 .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
 @media (max-width: 900px) { .cert-grid { grid-template-columns: 1fr; } }
