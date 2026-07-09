@@ -446,6 +446,23 @@
     window.requestAnimationFrame(tick);
   }
 
+  /* ---------------- GoatCounter click events ----------------
+     Elements tagged with data-goat report a named event (e.g.
+     download-cv, connect-linkedin) so conversions show up in the
+     GoatCounter dashboard alongside pageviews. Fails silently when the
+     analytics script is blocked or still loading. */
+  document.querySelectorAll('[data-goat]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+        window.goatcounter.count({
+          path: el.getAttribute('data-goat'),
+          title: el.getAttribute('data-goat'),
+          event: true
+        });
+      }
+    });
+  });
+
   /* ---------------- Footer year ---------------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
