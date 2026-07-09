@@ -466,4 +466,23 @@
   /* ---------------- Footer year ---------------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------------- Footer "last updated" ----------------
+     Reads the latest commit date from the GitHub API so the badge
+     always reflects the real deploy, with the page's Last-Modified
+     header as fallback. Stays hidden if neither yields a date. */
+  var updatedEl = document.getElementById('last-updated');
+  var updatedTimeEl = document.getElementById('last-updated-time');
+  if (updatedEl && updatedTimeEl && window.fetch) {
+    var showUpdated = function (date) {
+      if (!(date instanceof Date) || isNaN(date.getTime())) return;
+      updatedTimeEl.textContent = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+      updatedTimeEl.setAttribute('datetime', date.toISOString());
+      updatedEl.hidden = false;
+    };
+    fetch('https://api.github.com/repos/enggarranu/enggarranu.github.io/commits?per_page=1')
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('http ' + res.status)); })
+      .then(function (data) { showUpdated(new Date(data[0].commit.committer.date)); })
+      .catch(function () { showUpdated(new Date(document.lastModified)); });
+  }
 })();

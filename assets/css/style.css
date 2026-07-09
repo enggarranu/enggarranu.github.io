@@ -540,6 +540,19 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .back-to-top { display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); }
 .back-to-top:hover { color: var(--primary); }
 
+.footer-updated {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.03em;
+  color: var(--text-muted);
+}
+.footer-updated[hidden] { display: none; }
+.footer-updated__dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--success); box-shadow: 0 0 0 3px var(--success-soft);
+  animation: dot-pulse 2.4s ease-out infinite;
+}
+.footer-updated time { color: var(--text-secondary); font-weight: 500; }
+
 /* ---------- Lenis Smooth Scroll ---------- */
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
