@@ -262,6 +262,16 @@
           </div>
           <p class="exp-card__mission">As part of the Database SRE organization, I design and build automation platforms that improve the reliability, scalability, and operational efficiency of large-scale database infrastructure across ByteDance.</p>
           <ul>
+            <li>Led identification and classification of Tokopedia's L0 core links with RD and QA teams across Digital Goods, Homepage, PDP, Cart, Checkout, Order, Customer Service, Plus, and Bonus, then mapped service dependencies and entrance PSM SLAs.</li>
+            <li>Built SRE monitoring and alerting on Polaris, Grafana, Argos, and Triangle for 100% of L0 core links, standardizing metrics across four platforms into one view for RD, QA, and regional SRE teams.</li>
+            <li>Designed frontend journey monitoring with Firemap for Home, Cart, Checkout, PDP, registration, and login, combined with backend alarms to catch user-facing failures earlier.</li>
+            <li>Diagnosed a recurring forced-logout issue and created the monitoring and alerts to detect it before users reported it.</li>
+            <li>Delivered incident reliability metrics (incident distribution, recall rate, MTTD) to product teams, supporting zero P2+ incidents in Q4 2025 and shared 24/7 on-call across regional SRE teams.</li>
+            <li>Investigated and resolved a production payment-database failover caused by connection saturation and lock contention: traced the blocking chain, fixed pooling and transaction handling, and added safeguards against repeat incidents.</li>
+            <li>Owned datastore readiness for Tokopedia mega campaigns (Payday, Ramadhan, double dates): analyzed load test results, ran pre-event checklists (vacuum, scale-up), and stood by in war rooms. Reviewed 300+ databases ahead of events to handle 2x to 4x baseline traffic, sustaining 99.88% to 99.97% uptime across 2025 events.</li>
+            <li>Built a centralized Big Sales dashboard (ByteFaaS APIs over Elasticsearch and campaign DB queries) giving real-time visibility into sales performance and backend health during peak events.</li>
+            <li>Built a Python Risk Insight tool (Debezium connector monitoring, Lark bot alerts) and a Global Risk Governance dashboard on Triangle, and tagged Toko databases by criticality (P0/P1) across NDB, Redis, ByteES, and Abase.</li>
+            <li>Led the RDS-to-ByteNDB migration as Component SRE: wrote the SOP, executed cutovers, and decommissioned 155 legacy RDS components, cutting SQL cost by 94.2% (~$5.2K/day).</li>
             <li>Tech Lead for Tokopedia's PostgreSQL-to-MySQL migration program following the ByteDance acquisition — co-designing migration architecture, engineering standards, automation ecosystem, and operational governance.</li>
             <li>Designed heterogeneous migration architecture covering PostgreSQL, MySQL, Debezium, Kafka, CDC, rollback strategy, data type conversion, validation, and production cutover.</li>
             <li>Built end-to-end automation for provisioning, migration validation, rollback, monitoring, and operational workflows.</li>
@@ -269,7 +279,7 @@
             <li>Served as a technical approver during Infrastructure Go/No-Go decisions for production migration; mentored engineers and reviewed infrastructure pull requests.</li>
             <li>Supported operation and reliability of ~408 production database clusters (PostgreSQL, MySQL, YugabyteDB).</li>
           </ul>
-          <div class="tech-row"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">Debezium</span><span class="chip">Kafka</span><span class="chip">Go</span><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">SQL</span></div>
+          <div class="tech-row"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">Debezium</span><span class="chip">Kafka</span><span class="chip">Go</span><span class="chip">Python</span><span class="chip">Bash</span><span class="chip">SQL</span><span class="chip">Grafana</span><span class="chip">Terraform</span><span class="chip">Ansible</span></div>
         </article>
 
         <article class="exp-card reveal">
